@@ -1,0 +1,12 @@
+{
+  "appId": "com.taskomon.app",
+  "appName": "Taskomon",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": { "launchShowDuration": 0 },
+    "GoogleAuth": {
+      "scopes": ["profile", "email"],
+      "forceCodeForRefreshToken": true
+    }
+  }
+}
