@@ -1,19 +1,19 @@
 const CACHE_NAME = 'taskomon-v1';
 const ASSETS = [
-  '/taskomon/',
-  '/taskomon/index.html',
-  '/taskomon/AppIcon.png',
-  '/taskomon/EggSprite.png',
-  '/taskomon/PetBase.png',
-  '/taskomon/PetSleep.png',
-  '/taskomon/PetHappy.png',
-  '/taskomon/PetIll.png',
-  '/taskomon/Sparkle.gif',
-  '/taskomon/SleepAnimation.gif',
-  '/taskomon/WashAnimation.gif',
-  '/taskomon/BallAnimation.gif',
-  '/taskomon/PetEat.gif',
-  '/taskomon/IllAnimation.gif',
+  '/Taskomon/',
+  '/Taskomon/index.html',
+  '/Taskomon/AppIcon.png',
+  '/Taskomon/EggSprite.png',
+  '/Taskomon/PetBase.png',
+  '/Taskomon/PetSleep.png',
+  '/Taskomon/PetHappy.png',
+  '/Taskomon/PetIll.png',
+  '/Taskomon/Sparkle.gif',
+  '/Taskomon/SleepAnimation.gif',
+  '/Taskomon/WashAnimation.gif',
+  '/Taskomon/BallAnimation.gif',
+  '/Taskomon/PetEat.gif',
+  '/Taskomon/IllAnimation.gif',
 ];
 
 self.addEventListener('install', e => {
