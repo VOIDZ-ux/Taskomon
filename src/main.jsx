@@ -18,7 +18,7 @@ if (_search.includes("debug=sleep")) {
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/taskomon/sw.js')
+    navigator.serviceWorker.register('/Taskomon/sw.js')
       .then(() => console.log('[SW] registered'))
       .catch(e => console.error('[SW] error', e));
   });
