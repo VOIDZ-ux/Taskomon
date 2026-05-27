@@ -16,6 +16,14 @@ if (_search.includes("debug=sleep")) {
   if (isEmpty) initSleepDebug();
 }
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/taskomon/sw.js')
+      .then(() => console.log('[SW] registered'))
+      .catch(e => console.error('[SW] error', e));
+  });
+}
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
