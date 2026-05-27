@@ -14,7 +14,7 @@ export default function SetupDialog({ open, onComplete }) {
       <div className="dialog setup-dialog" onClick={e => e.stopPropagation()}>
 
         <div className="setup-egg">
-          <img src="/EggSprite.png" alt="egg" style={{ width: 64, height: 64, imageRendering: "pixelated" }} />
+          <img src={import.meta.env.BASE_URL + "EggSprite.png"} alt="egg" style={{ width: 64, height: 64, imageRendering: "pixelated" }} />
         </div>
 
         <h4>WELCOME TO TASKOMON</h4>

@@ -338,7 +338,7 @@ export default function MainScreen({
   return (
     <div className={`main-screen ${!active ? "pushed" : ""}`}>
       <div className="header">
-        <img className="logo" src="/TaskomonLogo.png" alt="Taskomon" />
+        <img className="logo" src={import.meta.env.BASE_URL + "TaskomonLogo.png"} alt="Taskomon" />
         <div className="icon-row">
           <button className="icon-btn" title="Settings" onClick={onGoSettings}><IconGear /></button>
           <button className="icon-btn" title="Profile" onClick={onGoProfile}><IconUser /></button>

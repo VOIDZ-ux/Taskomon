@@ -1,44 +1,45 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
+const BASE = import.meta.env.BASE_URL;
 const CELL = 6;
 
 const EggSprite = () => (
-  <img src="/EggSprite.png" alt="egg"
+  <img src={BASE + "EggSprite.png"} alt="egg"
     style={{ width: "96px", height: "96px", imageRendering: "pixelated" }} />
 );
 
 const PetBase = () => (
-  <img src="/PetBase.png" alt="pet"
+  <img src={BASE + "PetBase.png"} alt="pet"
     style={{ width: "96px", height: "96px", imageRendering: "pixelated" }} />
 );
 
 const PetSleep = () => (
-  <img src="/PetSleep.png" alt="sleeping pet"
+  <img src={BASE + "PetSleep.png"} alt="sleeping pet"
     style={{ width: "96px", height: "96px", imageRendering: "pixelated" }} />
 );
 
 const PetHappy = () => (
-  <img src="/PetHappy.png" alt="happy pet"
+  <img src={BASE + "PetHappy.png"} alt="happy pet"
     style={{ width: "96px", height: "96px", imageRendering: "pixelated" }} />
 );
 
 const PetIll = () => (
-  <img src="/PetIll.png" alt="ill pet"
+  <img src={BASE + "PetIll.png"} alt="ill pet"
     style={{ position: "relative", width: "96px", height: "96px", imageRendering: "pixelated", zIndex: 1 }} />
 );
 
 const PetGold = () => (
-  <img src="/PetGold.png" alt="golden pet"
+  <img src={BASE + "PetGold.png"} alt="golden pet"
     style={{ width: "96px", height: "96px", imageRendering: "pixelated" }} />
 );
 
 const PetGoldHappy = () => (
-  <img src="/PetGoldHappy.png" alt="happy golden pet"
+  <img src={BASE + "PetGoldHappy.png"} alt="happy golden pet"
     style={{ width: "96px", height: "96px", imageRendering: "pixelated" }} />
 );
 
 const PetGoldSleep = () => (
-  <img src="/PetGoldSleep.png" alt="sleeping golden pet"
+  <img src={BASE + "PetGoldSleep.png"} alt="sleeping golden pet"
     style={{ width: "96px", height: "96px", imageRendering: "pixelated" }} />
 );
 
@@ -63,7 +64,7 @@ const GoldenSparkles = () => (
 );
 
 // Crack overlay — sprite-based, one image per stage (1–3)
-const CRACK_SRCS = [null, "/EggCrack1.png", "/EggCrack2.png", "/EggCrack3.png"];
+const CRACK_SRCS = [null, BASE + "EggCrack1.png", BASE + "EggCrack2.png", BASE + "EggCrack3.png"];
 
 const CrackOverlay = ({ stage }) => {
   const src = CRACK_SRCS[stage];
@@ -204,10 +205,10 @@ export default function CreatureView({ creatureState, wiggleTrigger, hatchTrigge
   // Mounts a random GIF overlay (Sparkle, Wash, or Ball) once per queued happy animation
   const startHappyAnim = useCallback(() => {
     const options = [
-      { src: '/Sparkle.gif',       duration: 2400 },
-      { src: '/WashAnimation.gif', duration: 2400 },
-      { src: '/BallAnimation.gif', duration: 3300 },
-      { src: '/PetEat.gif',        duration: 2800 },
+      { src: BASE + 'Sparkle.gif',       duration: 2400 },
+      { src: BASE + 'WashAnimation.gif', duration: 2400 },
+      { src: BASE + 'BallAnimation.gif', duration: 3300 },
+      { src: BASE + 'PetEat.gif',        duration: 2800 },
     ];
     const pick = options[Math.floor(Math.random() * options.length)];
     setHappyOverlayGif(pick.src);
@@ -375,7 +376,7 @@ export default function CreatureView({ creatureState, wiggleTrigger, hatchTrigge
           {showIllAnim && creatureState === "ill" && (
             <img
               key={illAnimKey}
-              src={`/IllAnimation.gif?t=${illAnimKey}`}
+              src={`${BASE}IllAnimation.gif?t=${illAnimKey}`}
               alt=""
               style={{
                 position: "absolute", top: 0, left: 0,
@@ -392,7 +393,7 @@ export default function CreatureView({ creatureState, wiggleTrigger, hatchTrigge
           {sprite}
           {creatureState === "egg" && <CrackOverlay stage={crackStage} />}
           {showSparkle && creatureState === "egg" && (
-            <img key={sparkleKey} src={`/Sparkle.gif?t=${sparkleKey}`} alt="" style={overlayStyle} />
+            <img key={sparkleKey} src={`${BASE}Sparkle.gif?t=${sparkleKey}`} alt="" style={overlayStyle} />
           )}
           {happyOverlayGif && (creatureState === "happy" || creatureState === "golden-happy") && (
             <img
@@ -403,7 +404,7 @@ export default function CreatureView({ creatureState, wiggleTrigger, hatchTrigge
             />
           )}
           {showSleep && (creatureState === "sleepy" || creatureState === "golden-sleepy") && (
-            <img key={sleepKey} src={`/SleepAnimation.gif?t=${sleepKey}`} alt="" style={overlayStyle} />
+            <img key={sleepKey} src={`${BASE}SleepAnimation.gif?t=${sleepKey}`} alt="" style={overlayStyle} />
           )}
         </div>
       </div>

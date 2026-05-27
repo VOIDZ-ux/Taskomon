@@ -84,7 +84,7 @@ export default function ProfileScreen({
 
       {/* Logo + name */}
       <div className="profile-logo-section">
-        <img src="/TaskomonLogo.png" alt="Taskomon" className="profile-logo-img" />
+        <img src={import.meta.env.BASE_URL + "TaskomonLogo.png"} alt="Taskomon" className="profile-logo-img" />
         <div className="profile-tagline">your data lives here, on this device. nowhere else.</div>
       </div>
 
