@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "settings": "Configurações",
+    "profile": "Perfil"
+  },
+  "habits": {
+    "title": "Hábitos",
+    "expand": "Expandir hábitos",
+    "collapse": "Recolher hábitos",
+    "todayCount": "{{done}}/{{total}} hoje",
+    "newHabit": "Novo hábito",
+    "emptyCard": "Nenhum hábito",
+    "collapsedStrip": "{{count}} hábitos · toque para expandir"
+  },
+  "tasks": {
+    "title": "Tarefas",
+    "expand": "Expandir tarefas",
+    "collapse": "Recolher tarefas",
+    "activeCount": "{{count}} ativas",
+    "newTask": "Nova tarefa",
+    "emptyCard": "Nenhuma tarefa ativa",
+    "emptyCardHint": "Nenhuma tarefa · toque + para adicionar",
+    "collapsedStrip": "{{count}} tarefas · toque para expandir"
+  },
+  "pantry": {
+    "title": "Despensa",
+    "expand": "Expandir despensa",
+    "collapse": "Recolher despensa",
+    "dormantCount": "{{count}} em espera",
+    "addBtn": "Adicionar à despensa",
+    "emptyCard": "Despensa vazia",
+    "collapsedStrip": "{{count}} em espera · toque para expandir"
+  },
+  "calendar": {
+    "title": "Calendário",
+    "thisWeek": "Esta semana",
+    "thirtyDays": "30 dias",
+    "oneYear": "1 ano",
+    "allTime": "Todo o tempo",
+    "completionRate": "Taxa de conclusão",
+    "bestStreak": "Melhor sequência",
+    "missed": "perdida"
+  },
+  "sort": {
+    "btn": "Ordenar",
+    "az": "A→Z",
+    "byDate": "Por data"
+  },
+  "row": {
+    "dragToReorder": "Arraste para reordenar",
+    "doneTitle": "Será arquivado no Calendário à meia-noite",
+    "donePill": "feito · arquiva à meia-noite",
+    "moveToPantryTitle": "Mover para a despensa",
+    "gracePill": "↩ despensa · {{time}}",
+    "missedDays": "perdida {{count}}d",
+    "dueToday": "vence hoje",
+    "configure": "Configurar",
+    "weekProgress": "{{done}}/{{goal}} esta semana",
+    "moveToTasks": "Mover para tarefas",
+    "activate": "Ativar"
+  },
+  "sheet": {
+    "editHabit": "EDITAR HÁBITO",
+    "editTask": "EDITAR TAREFA",
+    "newInPantry": "NOVO NA DESPENSA",
+    "new": "NOVO",
+    "kindHabit": "Hábito",
+    "kindTask": "Tarefa",
+    "hintPantry": "Salvo na despensa · inativo até você ativá-lo",
+    "hintHabit": "Recorrente · contribui para o % semanal com base na meta",
+    "hintTask": "Pontual · deve ser concluído hoje ou conta como perdida",
+    "placeholderHabit": "ex. meditar",
+    "placeholderTask": "ex. enviar fatura",
+    "weeklyGoal": "Meta semanal",
+    "perWeek": "× / semana",
+    "goalLabel1": "Uma vez por semana",
+    "goalLabel2": "Duas vezes por semana",
+    "goalLabel3": "3 dias por semana",
+    "goalLabel4": "4 dias por semana",
+    "goalLabel5": "5 dias por semana",
+    "goalLabel6": "6 dias por semana",
+    "goalLabel7": "Todos os dias",
+    "colorLabel": "cor",
+    "reservedColor": "Reservado por um hábito excluído",
+    "usedColor": "Usado por outro item",
+    "customColor": "Cor personalizada",
+    "colorInUse": "Esta cor já está em uso.",
+    "deleteHabit": "Excluir hábito",
+    "deleteTask": "Excluir tarefa",
+    "cancel": "Cancelar",
+    "add": "+ Adicionar",
+    "save": "Salvar"
+  },
+  "deleteDialog": {
+    "title": "Excluir \"{{name}}\"?",
+    "habitMessage": "Escolha o que fazer com o progresso deste hábito no Calendário.",
+    "taskMessage": "Esta tarefa será removida. Apagá-la também do Calendário?",
+    "keepHistory": "Manter histórico · reservar cor",
+    "wipeAll": "Apagar tudo",
+    "cancel": "Cancelar",
+    "reservedNote": "Se mantido, {{color}} não poderá ser reutilizado."
+  },
+  "profile": {
+    "title": "Perfil",
+    "statHabits": "hábitos",
+    "statTasksDone": "tarefas feitas",
+    "statStreak": "sequência",
+    "tagline": "seus dados vivem aqui, neste dispositivo. em nenhum outro lugar.",
+    "exportBtn": "Exportar backup",
+    "exportSub": "salva um arquivo .json que você pode restaurar a qualquer momento",
+    "importBtn": "Importar backup",
+    "importSub": "restaura de um arquivo exportado anteriormente",
+    "resetBtn": "Redefinir tudo",
+    "resetSub": "apaga tudo e começa do zero",
+    "madeBy": "Este app foi criado por Claudio Dalla Libera",
+    "footerText": "sem contas · sem nuvem · sem anúncios · abra em qualquer dispositivo com seu backup",
+    "importDialogTitle": "Importar backup?",
+    "importDialogMessage": "Importar {{habits}} hábitos e {{tasks}} tarefas do backup de {{date}}? Isso substituirá seus dados atuais.",
+    "importConfirmBtn": "Importar",
+    "exportedToast": "Backup exportado!",
+    "exportFailedToast": "Falha ao exportar",
+    "invalidBackupToast": "Backup inválido: {{error}}"
+  },
+  "settings": {
+    "title": "Configurações",
+    "weekSection": "Semana",
+    "weekStartLabel": "A semana começa no",
+    "creatureSection": "Criatura",
+    "thresholdLabel": "Limite de conclusão",
+    "thresholdSub": "% semanal necessário para manter Mon saudável",
+    "thresholdRange": "0 — 100",
+    "daySection": "Dia",
+    "rolloverLabel": "Reinício do dia",
+    "rolloverSub": "Quando as tarefas expiram e os hábitos são reiniciados. Escolha mais tarde se trabalha à noite.",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "Seu dia se reinicia à meia-noite.",
+    "rolloverHour": "Seu dia se reinicia às {{hour}}. Qualquer coisa anterior ainda conta como dia anterior.",
+    "displaySection": "Exibição",
+    "showClock": "Mostrar relógio na tela principal",
+    "format24h": "Formato 24h",
+    "devTools": "DEV TOOLS",
+    "devSimulate": "Simular semana completa",
+    "devSimulateSub": "aguarde até 60s para o gatilho",
+    "devHatch": "Forçar eclosão agora",
+    "devIll": "Forçar estado doente",
+    "devGolden": "Forçar estado dourado"
+  },
+  "illDialog": {
+    "title": "Mon não está se sentindo bem",
+    "message": "A conclusão desta semana ficou abaixo do seu limite. Continue completando hábitos e tarefas para curar Mon — ou baixe o limite semanal nas Configurações se a barra parecer muito alta.",
+    "gotIt": "Entendido",
+    "settings": "Configurações"
+  },
+  "setup": {
+    "welcome": "BEM-VINDO AO TASKOMON",
+    "intro": "Antes de começar, configure algumas preferências para que seu Mon saiba quando a semana começa e termina.",
+    "weekStartLabel": "A semana começa no",
+    "rolloverLabel": "Reinício do dia",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "Seu dia se reinicia à meia-noite.",
+    "rolloverHour": "Seu dia se reinicia às {{hour}}. Qualquer coisa anterior ainda conta como dia anterior.",
+    "startBtn": "Vamos lá!"
+  },
+  "onboarding": {
+    "title": "COMO FUNCIONA",
+    "intro": "Há três tipos de itens. Cada um afeta Mon de maneira diferente.",
+    "habitsLabel": "Hábitos",
+    "habitsDesc": "Metas recorrentes que você quer alcançar um número definido de vezes por semana — \"correr 3×\", \"meditar todo dia\". Formam a pontuação de saúde semanal de Mon. Se ficar abaixo do limite, Mon adoece.",
+    "tasksLabel": "Tarefas",
+    "tasksDesc": "Compromissos diários. Qualquer coisa incompleta quando o dia reinicia conta contra a saúde de Mon. Adicione apenas coisas que você realmente pretende terminar hoje.",
+    "pantryLabel": "Despensa",
+    "pantryDesc": "Uma área sem pressão para coisas no seu radar. Ative um item quando estiver pronto — ele se torna uma Tarefa do dia. Você tem 3 horas para mudar de ideia e devolvê-lo à Despensa. Depois disso, permanece como Tarefa.",
+    "gotIt": "Entendido!"
+  },
+  "app": {
+    "backToExit": "Pressione voltar novamente para sair",
+    "resetTitle": "Redefinir todo o progresso?",
+    "resetMessage": "Isso apagará todos os hábitos, tarefas, itens da despensa e histórico do calendário. Seu Mon voltará a ser um ovo.",
+    "resetBtn": "Redefinir"
+  },
+  "confirm": {
+    "cancel": "Cancelar"
+  },
+  "date": {
+    "weekdays": ["DOM","SEG","TER","QUA","QUI","SEX","SÁB"],
+    "months": ["JAN","FEV","MAR","ABR","MAI","JUN","JUL","AGO","SET","OUT","NOV","DEZ"]
+  },
+  "lang": {
+    "label": "Idioma",
+    "en": "English",
+    "it": "Italiano",
+    "es": "Español",
+    "pt": "Português",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語"
+  }
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { sameColor } from "./utils/colorHelpers.js";
 import { startOfWeekDate, dateKey } from "./utils/dateHelpers.js";
 import { computeHabitWeeklyStats } from "./utils/completionHelpers.js";
@@ -16,6 +17,7 @@ import OnboardingDialog from "./components/OnboardingDialog.jsx";
 import { App as CapApp } from "@capacitor/app";
 
 export default function App() {
+  const { t } = useTranslation();
   const [now, setNow] = useState(Date.now());
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 30 * 1000);
@@ -431,7 +433,7 @@ export default function App() {
           CapApp.exitApp();
         } else {
           backPressedOnce.current = true;
-          showToast("Press back again to exit");
+          showToast(t("app.backToExit"));
           setTimeout(() => { backPressedOnce.current = false; }, 2000);
         }
       }
@@ -571,9 +573,9 @@ export default function App() {
 
       <ConfirmDialog
         open={resetOpen}
-        title="Reset all progress?"
-        message="This will clear all habits, tasks, pantry items, and calendar history. Your Mon will go back to an egg."
-        confirmLabel="Reset"
+        title={t("app.resetTitle")}
+        message={t("app.resetMessage")}
+        confirmLabel={t("app.resetBtn")}
         onCancel={() => setResetOpen(false)}
         onConfirm={handleReset}
       />

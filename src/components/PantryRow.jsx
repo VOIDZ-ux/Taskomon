@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { IconGear, IconArrowUp, IconDragHandle } from "./Icons.jsx";
 
 export default function PantryRow({
@@ -6,6 +7,7 @@ export default function PantryRow({
   dragging, onDragStart, onDragOver, onDrop, onDragEnd,
   touchIsDragging, touchIsOver, onHandleTouchStart, onHandleTouchMove, onHandleTouchEnd,
 }) {
+  const { t } = useTranslation();
   const handleRef = useRef(null);
   const startRef = useRef(onHandleTouchStart);
   const moveRef = useRef(onHandleTouchMove);
@@ -43,20 +45,18 @@ export default function PantryRow({
       onDrop={onDrop}
       onDragEnd={onDragEnd}
     >
-      <div
-        ref={handleRef}
-        className="drag-handle"
-        title="Drag to reorder"
-      ><IconDragHandle size={12} /></div>
+      <div ref={handleRef} className="drag-handle" title={t("row.dragToReorder")}>
+        <IconDragHandle size={12} />
+      </div>
       <div className="pantry-color" style={{ background: item.color }} />
       <div className="pantry-name">{item.name}</div>
       <div className="pantry-actions">
-        <button className="icon-btn" style={{ width: 24, height: 24, color: "rgba(255,255,255,0.45)" }} onClick={onConfig} title="Configure">
+        <button className="icon-btn" style={{ width: 24, height: 24, color: "rgba(255,255,255,0.45)" }} onClick={onConfig} title={t("row.configure")}>
           <IconGear size={12} />
         </button>
-        <button className="activate-btn" onClick={onActivate} title="Move to Tasks">
+        <button className="activate-btn" onClick={onActivate} title={t("row.moveToTasks")}>
           <IconArrowUp size={11} />
-          <span>Activate</span>
+          <span>{t("row.activate")}</span>
         </button>
       </div>
     </div>

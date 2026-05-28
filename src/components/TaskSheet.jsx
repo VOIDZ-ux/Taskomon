@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { PALETTE, sameColor, hexToRgb, rgbToHex, normalizeHex } from "../utils/colorHelpers.js";
 import { IconTrash, IconRepeat, IconCheckCircle } from "./Icons.jsx";
 
@@ -15,6 +16,7 @@ export default function TaskSheet({
   onUpdate,
   onDelete,
 }) {
+  const { t } = useTranslation();
   const findFreeColor = () => PALETTE.find(p => !blockedColors.some(b => sameColor(b, p))) || PALETTE[1];
 
   const [kind, setKind] = useState(defaultKind);
@@ -83,43 +85,42 @@ export default function TaskSheet({
     onClose();
   };
 
-  const goalLabels = [
-    "Once a week", "Twice a week", "3 days a week",
-    "4 days a week", "5 days a week", "6 days a week", "Every day",
-  ];
+  const sheetTitle = mode === "edit"
+    ? (kind === "habit" ? t("sheet.editHabit") : t("sheet.editTask"))
+    : toPantry ? t("sheet.newInPantry") : t("sheet.new");
+
+  const typeHint = toPantry
+    ? t("sheet.hintPantry")
+    : kind === "habit"
+    ? t("sheet.hintHabit")
+    : t("sheet.hintTask");
 
   return (
     <>
       <div className={`sheet-backdrop ${open ? "open" : ""}`} onClick={onClose} />
       <div className={`sheet ${open ? "open" : ""}`}>
         <div className="sheet-grip" />
-        <h3>{mode === "edit" ? `EDIT ${kind.toUpperCase()}` : toPantry ? "NEW IN PANTRY" : "NEW"}</h3>
+        <h3>{sheetTitle}</h3>
 
         {mode !== "edit" && !toPantry && (
           <div className="type-selector">
             <button className={kind === "habit" ? "on" : ""} onClick={() => setKind("habit")}>
               <IconRepeat size={11} />
-              <span>Habit</span>
+              <span>{t("sheet.kindHabit")}</span>
             </button>
             <button className={kind === "task" ? "on violet" : ""} onClick={() => setKind("task")}>
               <IconCheckCircle size={11} />
-              <span>Task</span>
+              <span>{t("sheet.kindTask")}</span>
             </button>
           </div>
         )}
         {mode !== "edit" && (
-          <div className="type-hint">
-            {toPantry
-              ? "Saved straight to Pantry · dormant until you activate it"
-              : kind === "habit"
-              ? "Recurring · contributes to weekly % based on goal"
-              : "One-off · must be done today or it counts as missed"}
-          </div>
+          <div className="type-hint">{typeHint}</div>
         )}
 
         <div className="field">
           <input
-            placeholder={kind === "habit" ? "e.g. meditate" : "e.g. send invoice"}
+            placeholder={kind === "habit" ? t("sheet.placeholderHabit") : t("sheet.placeholderTask")}
             value={name}
             onChange={e => setName(e.target.value.toLowerCase())}
             autoFocus={open}
@@ -130,8 +131,8 @@ export default function TaskSheet({
         {kind === "habit" && (
           <div className="goal-pop">
             <div className="gp-head">
-              <span className="gp-lbl">Weekly goal</span>
-              <span className="gp-val">{weeklyGoal}<small>× / week</small></span>
+              <span className="gp-lbl">{t("sheet.weeklyGoal")}</span>
+              <span className="gp-val">{weeklyGoal}<small>{t("sheet.perWeek")}</small></span>
             </div>
             <input
               type="range" min="1" max="7" step="1"
@@ -145,13 +146,13 @@ export default function TaskSheet({
               ))}
             </div>
             <div style={{ marginTop: 8, fontSize: 9, letterSpacing: 1, color: "rgba(255,255,255,0.45)", textTransform: "uppercase" }}>
-              {goalLabels[weeklyGoal - 1]}
+              {t(`sheet.goalLabel${weeklyGoal}`)}
             </div>
           </div>
         )}
 
         <div className="field" style={{ justifyContent: "space-between" }}>
-          <span style={{ color: "rgba(255,255,255,0.45)", fontSize: 11, letterSpacing: 1.5, textTransform: "uppercase" }}>color</span>
+          <span style={{ color: "rgba(255,255,255,0.45)", fontSize: 11, letterSpacing: 1.5, textTransform: "uppercase" }}>{t("sheet.colorLabel")}</span>
           <div className="swatches">
             {PALETTE.map(c => {
               const blocked = isBlocked(c);
@@ -161,7 +162,7 @@ export default function TaskSheet({
                   key={c}
                   className={`swatch ${active ? "active" : ""} ${blocked ? "disabled" : ""}`}
                   style={{ background: c }}
-                  title={blocked ? (isReserved(c) ? "Reserved by a deleted habit" : "Used by another item") : c}
+                  title={blocked ? (isReserved(c) ? t("sheet.reservedColor") : t("sheet.usedColor")) : c}
                   onClick={() => { if (!blocked) { setColor(c); setCustomOpen(false); } }}
                 />
               );
@@ -172,7 +173,7 @@ export default function TaskSheet({
                 setCustomOpen(o => !o);
                 if (!customOpen && inPalette) setCustom(rgb.r, rgb.g, rgb.b);
               }}
-              title="Custom color"
+              title={t("sheet.customColor")}
             />
           </div>
         </div>
@@ -205,7 +206,7 @@ export default function TaskSheet({
             {colorConflict && (
               <div className="reserved-note" style={{ background: "rgba(239,68,68,0.08)", color: "#EF4444" }}>
                 <div className="swatch-mini" style={{ background: color }} />
-                <span>This color is already in use.</span>
+                <span>{t("sheet.colorInUse")}</span>
               </div>
             )}
           </div>
@@ -214,18 +215,18 @@ export default function TaskSheet({
         {mode === "edit" && item && (
           <button className="delete-link" onClick={() => onDelete(item.id)}>
             <IconTrash size={14} />
-            <span>Delete {item.kind === "habit" ? "habit" : "task"}</span>
+            <span>{item.kind === "habit" ? t("sheet.deleteHabit") : t("sheet.deleteTask")}</span>
           </button>
         )}
 
         <div className="sheet-actions">
-          <button className="btn btn-ghost" onClick={onClose}>Cancel</button>
+          <button className="btn btn-ghost" onClick={onClose}>{t("sheet.cancel")}</button>
           <button
             className="btn btn-primary"
             onClick={submit}
             style={{ opacity: canSubmit ? 1 : 0.5, pointerEvents: canSubmit ? "auto" : "none" }}
           >
-            {mode === "edit" ? "Save" : "+ Add"}
+            {mode === "edit" ? t("sheet.save") : t("sheet.add")}
           </button>
         </div>
       </div>

@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "settings": "Settings",
+    "profile": "Profile"
+  },
+  "habits": {
+    "title": "Habits",
+    "expand": "Expand habits",
+    "collapse": "Collapse habits",
+    "todayCount": "{{done}}/{{total}} today",
+    "newHabit": "New habit",
+    "emptyCard": "No habits yet",
+    "collapsedStrip": "{{count}} habits · tap to expand"
+  },
+  "tasks": {
+    "title": "Tasks",
+    "expand": "Expand tasks",
+    "collapse": "Collapse tasks",
+    "activeCount": "{{count}} active",
+    "newTask": "New task",
+    "emptyCard": "No active tasks",
+    "emptyCardHint": "No active tasks · tap + to commit",
+    "collapsedStrip": "{{count}} tasks · tap to expand"
+  },
+  "pantry": {
+    "title": "Pantry",
+    "expand": "Expand pantry",
+    "collapse": "Collapse pantry",
+    "dormantCount": "{{count}} dormant",
+    "addBtn": "Add to pantry",
+    "emptyCard": "Pantry is empty",
+    "collapsedStrip": "{{count}} dormant · tap to expand"
+  },
+  "calendar": {
+    "title": "Calendar",
+    "thisWeek": "This Week",
+    "thirtyDays": "30 Days",
+    "oneYear": "1 Year",
+    "allTime": "All Time",
+    "completionRate": "Completion Rate",
+    "bestStreak": "Best Streak",
+    "missed": "missed"
+  },
+  "sort": {
+    "btn": "Sort",
+    "az": "A→Z",
+    "byDate": "By date"
+  },
+  "row": {
+    "dragToReorder": "Drag to reorder",
+    "doneTitle": "Will be filed in Calendar at midnight",
+    "donePill": "done · files at midnight",
+    "moveToPantryTitle": "Move back to Pantry",
+    "gracePill": "↩ pantry · {{time}}",
+    "missedDays": "missed {{count}}d",
+    "dueToday": "due today",
+    "configure": "Configure",
+    "weekProgress": "{{done}}/{{goal}} this week",
+    "moveToTasks": "Move to Tasks",
+    "activate": "Activate"
+  },
+  "sheet": {
+    "editHabit": "EDIT HABIT",
+    "editTask": "EDIT TASK",
+    "newInPantry": "NEW IN PANTRY",
+    "new": "NEW",
+    "kindHabit": "Habit",
+    "kindTask": "Task",
+    "hintPantry": "Saved straight to Pantry · dormant until you activate it",
+    "hintHabit": "Recurring · contributes to weekly % based on goal",
+    "hintTask": "One-off · must be done today or it counts as missed",
+    "placeholderHabit": "e.g. meditate",
+    "placeholderTask": "e.g. send invoice",
+    "weeklyGoal": "Weekly goal",
+    "perWeek": "× / week",
+    "goalLabel1": "Once a week",
+    "goalLabel2": "Twice a week",
+    "goalLabel3": "3 days a week",
+    "goalLabel4": "4 days a week",
+    "goalLabel5": "5 days a week",
+    "goalLabel6": "6 days a week",
+    "goalLabel7": "Every day",
+    "colorLabel": "color",
+    "reservedColor": "Reserved by a deleted habit",
+    "usedColor": "Used by another item",
+    "customColor": "Custom color",
+    "colorInUse": "This color is already in use.",
+    "deleteHabit": "Delete habit",
+    "deleteTask": "Delete task",
+    "cancel": "Cancel",
+    "add": "+ Add",
+    "save": "Save"
+  },
+  "deleteDialog": {
+    "title": "Delete \"{{name}}\"?",
+    "habitMessage": "Choose what to do with this habit's progress in your Calendar.",
+    "taskMessage": "This task will be removed. Wipe it from your Calendar too?",
+    "keepHistory": "Keep history · reserve color",
+    "wipeAll": "Wipe everything",
+    "cancel": "Cancel",
+    "reservedNote": "If kept, {{color}} can't be reused."
+  },
+  "profile": {
+    "title": "Profile",
+    "statHabits": "habits",
+    "statTasksDone": "tasks done",
+    "statStreak": "streak",
+    "tagline": "your data lives here, on this device. nowhere else.",
+    "exportBtn": "Export Backup",
+    "exportSub": "save a .json file you can restore anytime",
+    "importBtn": "Import Backup",
+    "importSub": "restore from a previously exported file",
+    "resetBtn": "Reset All Data",
+    "resetSub": "wipe everything and start fresh",
+    "madeBy": "This app was made by Claudio Dalla Libera",
+    "footerText": "no accounts · no cloud · no ads · open on any device with your backup file",
+    "importDialogTitle": "Import backup?",
+    "importDialogMessage": "Import {{habits}} habits, {{tasks}} tasks from backup of {{date}}? This will overwrite your current data.",
+    "importConfirmBtn": "Import",
+    "exportedToast": "Backup exported!",
+    "exportFailedToast": "Export failed",
+    "invalidBackupToast": "Invalid backup: {{error}}"
+  },
+  "settings": {
+    "title": "Settings",
+    "weekSection": "Week",
+    "weekStartLabel": "Week starts on",
+    "creatureSection": "Creature",
+    "thresholdLabel": "Completion threshold",
+    "thresholdSub": "Weekly % needed to keep your Mon healthy",
+    "thresholdRange": "0 — 100",
+    "daySection": "Day",
+    "rolloverLabel": "Day rollover",
+    "rolloverSub": "When tasks expire and habits reset. Pick later if you work nights.",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "Your day rolls over at midnight.",
+    "rolloverHour": "Your day rolls over at {{hour}}. Anything before that still counts as the previous day.",
+    "displaySection": "Display",
+    "showClock": "Show clock on main screen",
+    "format24h": "24h format",
+    "devTools": "DEV TOOLS",
+    "devSimulate": "Simulate week complete",
+    "devSimulateSub": "wait up to 60s for hatch to trigger",
+    "devHatch": "Force hatch now",
+    "devIll": "Force ill state",
+    "devGolden": "Force golden state"
+  },
+  "illDialog": {
+    "title": "Mon is not feeling well",
+    "message": "This week's completion fell below your threshold. Keep completing habits and tasks to nurse Mon back to health — or lower the weekly threshold in Settings if the bar feels too high.",
+    "gotIt": "Got it",
+    "settings": "Settings"
+  },
+  "setup": {
+    "welcome": "WELCOME TO TASKOMON",
+    "intro": "Before we start, set up a couple of preferences so your Mon knows when your week begins and ends.",
+    "weekStartLabel": "Week starts on",
+    "rolloverLabel": "Day rollover",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "Your day rolls over at midnight.",
+    "rolloverHour": "Your day rolls over at {{hour}}. Anything before that still counts as the previous day.",
+    "startBtn": "Let's go!"
+  },
+  "onboarding": {
+    "title": "HOW IT WORKS",
+    "intro": "There are three types of items. Each one affects Mon differently.",
+    "habitsLabel": "Habits",
+    "habitsDesc": "Recurring goals you want to hit a set number of times per week — \"run 3×\", \"meditate daily\". They make up Mon's weekly health score. Fall short of your threshold and Mon gets sick.",
+    "tasksLabel": "Tasks",
+    "tasksDesc": "Daily commitments. Anything left incomplete when the day resets counts against Mon's health. Only add things you genuinely intend to finish today.",
+    "pantryLabel": "Pantry",
+    "pantryDesc": "A no-pressure holding area for things on your radar. Activate an item when you're ready to own it — it becomes a Task for the day. You have 3 hours to change your mind and return it to the Pantry. After that, it stays as a Task.",
+    "gotIt": "Got it!"
+  },
+  "app": {
+    "backToExit": "Press back again to exit",
+    "resetTitle": "Reset all progress?",
+    "resetMessage": "This will clear all habits, tasks, pantry items, and calendar history. Your Mon will go back to an egg.",
+    "resetBtn": "Reset"
+  },
+  "confirm": {
+    "cancel": "Cancel"
+  },
+  "date": {
+    "weekdays": ["SUN","MON","TUE","WED","THU","FRI","SAT"],
+    "months": ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
+  },
+  "lang": {
+    "label": "Language",
+    "en": "English",
+    "it": "Italiano",
+    "es": "Español",
+    "pt": "Português",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語"
+  }
+}

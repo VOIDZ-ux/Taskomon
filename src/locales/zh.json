@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "settings": "设置",
+    "profile": "我的"
+  },
+  "habits": {
+    "title": "习惯",
+    "expand": "展开习惯",
+    "collapse": "收起习惯",
+    "todayCount": "今日 {{done}}/{{total}}",
+    "newHabit": "新习惯",
+    "emptyCard": "暂无习惯",
+    "collapsedStrip": "{{count}} 个习惯 · 点击展开"
+  },
+  "tasks": {
+    "title": "任务",
+    "expand": "展开任务",
+    "collapse": "收起任务",
+    "activeCount": "{{count}} 个进行中",
+    "newTask": "新任务",
+    "emptyCard": "暂无活动任务",
+    "emptyCardHint": "暂无任务 · 点击 + 添加",
+    "collapsedStrip": "{{count}} 个任务 · 点击展开"
+  },
+  "pantry": {
+    "title": "储藏室",
+    "expand": "展开储藏室",
+    "collapse": "收起储藏室",
+    "dormantCount": "{{count}} 个待激活",
+    "addBtn": "添加到储藏室",
+    "emptyCard": "储藏室为空",
+    "collapsedStrip": "{{count}} 个待激活 · 点击展开"
+  },
+  "calendar": {
+    "title": "日历",
+    "thisWeek": "本周",
+    "thirtyDays": "30天",
+    "oneYear": "1年",
+    "allTime": "全部",
+    "completionRate": "完成率",
+    "bestStreak": "最佳连续",
+    "missed": "未完成"
+  },
+  "sort": {
+    "btn": "排序",
+    "az": "A→Z",
+    "byDate": "按日期"
+  },
+  "row": {
+    "dragToReorder": "拖动排序",
+    "doneTitle": "将于午夜归档到日历",
+    "donePill": "完成 · 午夜归档",
+    "moveToPantryTitle": "移回储藏室",
+    "gracePill": "↩ 储藏室 · {{time}}",
+    "missedDays": "未完成 {{count}}天",
+    "dueToday": "今日到期",
+    "configure": "配置",
+    "weekProgress": "本周 {{done}}/{{goal}}",
+    "moveToTasks": "移到任务",
+    "activate": "激活"
+  },
+  "sheet": {
+    "editHabit": "编辑习惯",
+    "editTask": "编辑任务",
+    "newInPantry": "新添至储藏室",
+    "new": "新建",
+    "kindHabit": "习惯",
+    "kindTask": "任务",
+    "hintPantry": "保存到储藏室 · 激活前处于休眠状态",
+    "hintHabit": "周期性 · 按目标贡献每周完成率",
+    "hintTask": "一次性 · 必须今天完成，否则计为未完成",
+    "placeholderHabit": "例如：冥想",
+    "placeholderTask": "例如：发送发票",
+    "weeklyGoal": "每周目标",
+    "perWeek": "次 / 周",
+    "goalLabel1": "每周一次",
+    "goalLabel2": "每周两次",
+    "goalLabel3": "每周三次",
+    "goalLabel4": "每周四次",
+    "goalLabel5": "每周五次",
+    "goalLabel6": "每周六次",
+    "goalLabel7": "每天",
+    "colorLabel": "颜色",
+    "reservedColor": "被已删除习惯保留",
+    "usedColor": "被其他项目使用",
+    "customColor": "自定义颜色",
+    "colorInUse": "此颜色已在使用中。",
+    "deleteHabit": "删除习惯",
+    "deleteTask": "删除任务",
+    "cancel": "取消",
+    "add": "+ 添加",
+    "save": "保存"
+  },
+  "deleteDialog": {
+    "title": "删除「{{name}}」？",
+    "habitMessage": "选择如何处理此习惯在日历中的进度。",
+    "taskMessage": "此任务将被删除。同时从日历中清除吗？",
+    "keepHistory": "保留历史 · 保留颜色",
+    "wipeAll": "清除所有",
+    "cancel": "取消",
+    "reservedNote": "如果保留，{{color}} 将无法再次使用。"
+  },
+  "profile": {
+    "title": "我的",
+    "statHabits": "习惯",
+    "statTasksDone": "完成任务",
+    "statStreak": "连续天数",
+    "tagline": "你的数据存在这里，在这台设备上。仅此而已。",
+    "exportBtn": "导出备份",
+    "exportSub": "保存一个随时可以恢复的 .json 文件",
+    "importBtn": "导入备份",
+    "importSub": "从之前导出的文件恢复",
+    "resetBtn": "重置所有数据",
+    "resetSub": "清除所有内容并重新开始",
+    "madeBy": "此应用由 Claudio Dalla Libera 开发",
+    "footerText": "无账户 · 无云端 · 无广告 · 在任何设备上通过备份文件打开",
+    "importDialogTitle": "导入备份？",
+    "importDialogMessage": "从 {{date}} 的备份导入 {{habits}} 个习惯和 {{tasks}} 个任务？这将覆盖当前数据。",
+    "importConfirmBtn": "导入",
+    "exportedToast": "备份已导出！",
+    "exportFailedToast": "导出失败",
+    "invalidBackupToast": "备份无效：{{error}}"
+  },
+  "settings": {
+    "title": "设置",
+    "weekSection": "周",
+    "weekStartLabel": "每周开始于",
+    "creatureSection": "生物",
+    "thresholdLabel": "完成阈值",
+    "thresholdSub": "保持 Mon 健康所需的每周完成率",
+    "thresholdRange": "0 — 100",
+    "daySection": "天",
+    "rolloverLabel": "每日重置",
+    "rolloverSub": "任务到期和习惯重置的时间。如果你上夜班，可以选择更晚的时间。",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "你的一天在午夜重置。",
+    "rolloverHour": "你的一天在 {{hour}} 重置。在此之前的任何内容都算作前一天。",
+    "displaySection": "显示",
+    "showClock": "在主屏幕上显示时钟",
+    "format24h": "24小时制",
+    "devTools": "开发工具",
+    "devSimulate": "模拟完成一周",
+    "devSimulateSub": "等待最多 60 秒触发孵化",
+    "devHatch": "立即强制孵化",
+    "devIll": "强制生病状态",
+    "devGolden": "强制黄金状态"
+  },
+  "illDialog": {
+    "title": "Mon 状态不好",
+    "message": "本周完成率低于你的阈值。继续完成习惯和任务来让 Mon 恢复健康——或者在设置中降低每周阈值，如果标准感觉太高的话。",
+    "gotIt": "知道了",
+    "settings": "设置"
+  },
+  "setup": {
+    "welcome": "欢迎来到 TASKOMON",
+    "intro": "在开始之前，设置一些偏好，让你的 Mon 知道你的一周何时开始和结束。",
+    "weekStartLabel": "每周开始于",
+    "rolloverLabel": "每日重置",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "你的一天在午夜重置。",
+    "rolloverHour": "你的一天在 {{hour}} 重置。在此之前的任何内容都算作前一天。",
+    "startBtn": "开始吧！"
+  },
+  "onboarding": {
+    "title": "使用方法",
+    "intro": "有三种类型的项目，每种对 Mon 的影响不同。",
+    "habitsLabel": "习惯",
+    "habitsDesc": "你想每周达到一定次数的周期性目标——「跑步 3×」、「每天冥想」。它们构成 Mon 的每周健康分数。低于你的阈值，Mon 就会生病。",
+    "tasksLabel": "任务",
+    "tasksDesc": "每日承诺。每天重置时未完成的任何内容都会影响 Mon 的健康。只添加你今天真正打算完成的事情。",
+    "pantryLabel": "储藏室",
+    "pantryDesc": "一个无压力的区域，用于存放你雷达上的事情。当你准备好时激活一个项目——它就成为当天的任务。你有 3 小时可以改变主意并将其返回储藏室。之后，它将保留为任务。",
+    "gotIt": "知道了！"
+  },
+  "app": {
+    "backToExit": "再次按返回键退出",
+    "resetTitle": "重置所有进度？",
+    "resetMessage": "这将清除所有习惯、任务、储藏室项目和日历历史记录。你的 Mon 将回到蛋的状态。",
+    "resetBtn": "重置"
+  },
+  "confirm": {
+    "cancel": "取消"
+  },
+  "date": {
+    "weekdays": ["周日","周一","周二","周三","周四","周五","周六"],
+    "months": ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
+  },
+  "lang": {
+    "label": "语言",
+    "en": "English",
+    "it": "Italiano",
+    "es": "Español",
+    "pt": "Português",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語"
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "settings": "Paramètres",
+    "profile": "Profil"
+  },
+  "habits": {
+    "title": "Habitudes",
+    "expand": "Développer les habitudes",
+    "collapse": "Réduire les habitudes",
+    "todayCount": "{{done}}/{{total}} aujourd'hui",
+    "newHabit": "Nouvelle habitude",
+    "emptyCard": "Aucune habitude",
+    "collapsedStrip": "{{count}} habitudes · touchez pour développer"
+  },
+  "tasks": {
+    "title": "Tâches",
+    "expand": "Développer les tâches",
+    "collapse": "Réduire les tâches",
+    "activeCount": "{{count}} actives",
+    "newTask": "Nouvelle tâche",
+    "emptyCard": "Aucune tâche active",
+    "emptyCardHint": "Aucune tâche · touchez + pour ajouter",
+    "collapsedStrip": "{{count}} tâches · touchez pour développer"
+  },
+  "pantry": {
+    "title": "Réserve",
+    "expand": "Développer la réserve",
+    "collapse": "Réduire la réserve",
+    "dormantCount": "{{count}} en attente",
+    "addBtn": "Ajouter à la réserve",
+    "emptyCard": "Réserve vide",
+    "collapsedStrip": "{{count}} en attente · touchez pour développer"
+  },
+  "calendar": {
+    "title": "Calendrier",
+    "thisWeek": "Cette semaine",
+    "thirtyDays": "30 jours",
+    "oneYear": "1 an",
+    "allTime": "Tout le temps",
+    "completionRate": "Taux de complétion",
+    "bestStreak": "Meilleure série",
+    "missed": "manquée"
+  },
+  "sort": {
+    "btn": "Trier",
+    "az": "A→Z",
+    "byDate": "Par date"
+  },
+  "row": {
+    "dragToReorder": "Glisser pour réordonner",
+    "doneTitle": "Sera archivé dans le Calendrier à minuit",
+    "donePill": "fait · archivé à minuit",
+    "moveToPantryTitle": "Remettre dans la réserve",
+    "gracePill": "↩ réserve · {{time}}",
+    "missedDays": "manquée {{count}}j",
+    "dueToday": "à faire aujourd'hui",
+    "configure": "Configurer",
+    "weekProgress": "{{done}}/{{goal}} cette semaine",
+    "moveToTasks": "Déplacer vers les tâches",
+    "activate": "Activer"
+  },
+  "sheet": {
+    "editHabit": "MODIFIER L'HABITUDE",
+    "editTask": "MODIFIER LA TÂCHE",
+    "newInPantry": "NOUVEAU DANS LA RÉSERVE",
+    "new": "NOUVEAU",
+    "kindHabit": "Habitude",
+    "kindTask": "Tâche",
+    "hintPantry": "Sauvegardé dans la réserve · inactif jusqu'à ce que vous l'activiez",
+    "hintHabit": "Récurrent · contribue au % hebdomadaire selon l'objectif",
+    "hintTask": "Ponctuel · doit être fait aujourd'hui sinon compte comme manqué",
+    "placeholderHabit": "ex. méditer",
+    "placeholderTask": "ex. envoyer la facture",
+    "weeklyGoal": "Objectif hebdomadaire",
+    "perWeek": "× / semaine",
+    "goalLabel1": "Une fois par semaine",
+    "goalLabel2": "Deux fois par semaine",
+    "goalLabel3": "3 jours par semaine",
+    "goalLabel4": "4 jours par semaine",
+    "goalLabel5": "5 jours par semaine",
+    "goalLabel6": "6 jours par semaine",
+    "goalLabel7": "Tous les jours",
+    "colorLabel": "couleur",
+    "reservedColor": "Réservé par une habitude supprimée",
+    "usedColor": "Utilisé par un autre élément",
+    "customColor": "Couleur personnalisée",
+    "colorInUse": "Cette couleur est déjà utilisée.",
+    "deleteHabit": "Supprimer l'habitude",
+    "deleteTask": "Supprimer la tâche",
+    "cancel": "Annuler",
+    "add": "+ Ajouter",
+    "save": "Enregistrer"
+  },
+  "deleteDialog": {
+    "title": "Supprimer \"{{name}}\" ?",
+    "habitMessage": "Choisissez ce que vous voulez faire avec les progrès de cette habitude dans votre Calendrier.",
+    "taskMessage": "Cette tâche sera supprimée. L'effacer aussi du Calendrier ?",
+    "keepHistory": "Garder l'historique · réserver la couleur",
+    "wipeAll": "Tout effacer",
+    "cancel": "Annuler",
+    "reservedNote": "Si conservé, {{color}} ne pourra pas être réutilisé."
+  },
+  "profile": {
+    "title": "Profil",
+    "statHabits": "habitudes",
+    "statTasksDone": "tâches faites",
+    "statStreak": "série",
+    "tagline": "vos données sont ici, sur cet appareil. nulle part ailleurs.",
+    "exportBtn": "Exporter la sauvegarde",
+    "exportSub": "enregistre un fichier .json que vous pouvez restaurer à tout moment",
+    "importBtn": "Importer la sauvegarde",
+    "importSub": "restaurer depuis un fichier précédemment exporté",
+    "resetBtn": "Réinitialiser tout",
+    "resetSub": "effacer tout et repartir à zéro",
+    "madeBy": "Cette app a été créée par Claudio Dalla Libera",
+    "footerText": "sans compte · sans cloud · sans pub · ouvrez sur n'importe quel appareil avec votre sauvegarde",
+    "importDialogTitle": "Importer la sauvegarde ?",
+    "importDialogMessage": "Importer {{habits}} habitudes et {{tasks}} tâches depuis la sauvegarde du {{date}} ? Cela écrasera vos données actuelles.",
+    "importConfirmBtn": "Importer",
+    "exportedToast": "Sauvegarde exportée !",
+    "exportFailedToast": "Échec de l'exportation",
+    "invalidBackupToast": "Sauvegarde invalide : {{error}}"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "weekSection": "Semaine",
+    "weekStartLabel": "La semaine commence le",
+    "creatureSection": "Créature",
+    "thresholdLabel": "Seuil de complétion",
+    "thresholdSub": "% hebdomadaire pour garder votre Mon en bonne santé",
+    "thresholdRange": "0 — 100",
+    "daySection": "Jour",
+    "rolloverLabel": "Réinitialisation du jour",
+    "rolloverSub": "Quand les tâches expirent et les habitudes se réinitialisent. Choisissez plus tard si vous travaillez la nuit.",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "Votre journée se réinitialise à minuit.",
+    "rolloverHour": "Votre journée se réinitialise à {{hour}}. Tout ce qui précède compte encore comme la veille.",
+    "displaySection": "Affichage",
+    "showClock": "Afficher l'horloge sur l'écran principal",
+    "format24h": "Format 24h",
+    "devTools": "OUTILS DEV",
+    "devSimulate": "Simuler semaine complète",
+    "devSimulateSub": "attendre jusqu'à 60s pour le déclenchement",
+    "devHatch": "Forcer l'éclosion maintenant",
+    "devIll": "Forcer l'état malade",
+    "devGolden": "Forcer l'état doré"
+  },
+  "illDialog": {
+    "title": "Mon ne se sent pas bien",
+    "message": "Le taux de complétion de cette semaine est tombé en dessous de votre seuil. Continuez à compléter des habitudes et des tâches pour soigner Mon — ou abaissez le seuil hebdomadaire dans les Paramètres si la barre semble trop haute.",
+    "gotIt": "Compris",
+    "settings": "Paramètres"
+  },
+  "setup": {
+    "welcome": "BIENVENUE SUR TASKOMON",
+    "intro": "Avant de commencer, configurez quelques préférences pour que votre Mon sache quand votre semaine commence et se termine.",
+    "weekStartLabel": "La semaine commence le",
+    "rolloverLabel": "Réinitialisation du jour",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "Votre journée se réinitialise à minuit.",
+    "rolloverHour": "Votre journée se réinitialise à {{hour}}. Tout ce qui précède compte encore comme la veille.",
+    "startBtn": "C'est parti !"
+  },
+  "onboarding": {
+    "title": "COMMENT ÇA MARCHE",
+    "intro": "Il y a trois types d'éléments. Chacun affecte Mon différemment.",
+    "habitsLabel": "Habitudes",
+    "habitsDesc": "Des objectifs récurrents que vous voulez atteindre un nombre défini de fois par semaine — \"courir 3×\", \"méditer chaque jour\". Ils forment le score de santé hebdomadaire de Mon. En dessous de votre seuil, Mon tombe malade.",
+    "tasksLabel": "Tâches",
+    "tasksDesc": "Des engagements quotidiens. Tout ce qui reste incomplet à la réinitialisation du jour nuit à la santé de Mon. N'ajoutez que ce que vous avez vraiment l'intention de finir aujourd'hui.",
+    "pantryLabel": "Réserve",
+    "pantryDesc": "Un espace sans pression pour les choses sur votre radar. Activez un élément quand vous êtes prêt — il devient une Tâche pour la journée. Vous avez 3 heures pour changer d'avis et le remettre dans la Réserve. Après ça, il reste comme Tâche.",
+    "gotIt": "Compris !"
+  },
+  "app": {
+    "backToExit": "Appuyez à nouveau sur Retour pour quitter",
+    "resetTitle": "Réinitialiser toute la progression ?",
+    "resetMessage": "Cela effacera toutes les habitudes, tâches, éléments de la réserve et l'historique du calendrier. Votre Mon retournera à l'état d'œuf.",
+    "resetBtn": "Réinitialiser"
+  },
+  "confirm": {
+    "cancel": "Annuler"
+  },
+  "date": {
+    "weekdays": ["DIM","LUN","MAR","MER","JEU","VEN","SAM"],
+    "months": ["JAN","FÉV","MAR","AVR","MAI","JUN","JUL","AOÛ","SEP","OCT","NOV","DÉC"]
+  },
+  "lang": {
+    "label": "Langue",
+    "en": "English",
+    "it": "Italiano",
+    "es": "Español",
+    "pt": "Português",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語"
+  }
+}

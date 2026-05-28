@@ -1,4 +1,5 @@
 import { useState, useRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { IconBack, IconDown, IconUp } from "./Icons.jsx";
 import { buildBackupData, exportBackupData, validateBackup, readJSONFile } from "../utils/backupHelpers.js";
 import { dateKey } from "../utils/dateHelpers.js";
@@ -9,10 +10,10 @@ export default function ProfileScreen({
   habits, tasks, taskHistory,
   getSnapshot, importBackup, onToast, onReset,
 }) {
+  const { t } = useTranslation();
   const [importDialog, setImportDialog] = useState(null);
   const fileInputRef = useRef(null);
 
-  // ─── Stats ────────────────────────────────────────────────
   const totalHabits = habits.length;
   const totalTasksDone = taskHistory.filter(t => t.status === "done").length;
 
@@ -34,19 +35,17 @@ export default function ProfileScreen({
     return s;
   }, [habits, tasks, taskHistory]);
 
-  // ─── Export ───────────────────────────────────────────────
   const handleExport = async () => {
     try {
       const data = buildBackupData(getSnapshot());
       await exportBackupData(data);
-      onToast("Backup exported!", "lime");
+      onToast(t("profile.exportedToast"), "lime");
     } catch (e) {
       console.error("Export error:", e);
-      onToast("Export failed");
+      onToast(t("profile.exportFailedToast"));
     }
   };
 
-  // ─── Import ───────────────────────────────────────────────
   const handleImportClick = () => fileInputRef.current?.click();
 
   const handleFileChange = async (e) => {
@@ -57,14 +56,18 @@ export default function ProfileScreen({
       const data = await readJSONFile(file);
       validateBackup(data);
       const exportedDate = data.exportedAt
-        ? new Date(data.exportedAt).toLocaleDateString("it-IT")
+        ? new Date(data.exportedAt).toLocaleDateString()
         : "unknown date";
       setImportDialog({
         data,
-        message: `Import ${data.habits?.length || 0} habits, ${data.tasks?.length || 0} tasks from backup of ${exportedDate}? This will overwrite your current data.`,
+        message: t("profile.importDialogMessage", {
+          habits: data.habits?.length || 0,
+          tasks: data.tasks?.length || 0,
+          date: exportedDate,
+        }),
       });
     } catch (err) {
-      onToast("Invalid backup: " + err.message);
+      onToast(t("profile.invalidBackupToast", { error: err.message }));
     }
   };
 
@@ -78,65 +81,61 @@ export default function ProfileScreen({
     <div className={`sub-screen ${active ? "active" : ""}`}>
       <div className="sub-header">
         <button className="back-btn" onClick={onBack} title="Back"><IconBack /></button>
-        <div className="title">Profile</div>
+        <div className="title">{t("profile.title")}</div>
         <div />
       </div>
 
-      {/* Logo + name */}
       <div className="profile-logo-section">
         <img src={import.meta.env.BASE_URL + "TaskomonLogo.png"} alt="Taskomon" className="profile-logo-img" />
-        <div className="profile-tagline">your data lives here, on this device. nowhere else.</div>
+        <div className="profile-tagline">{t("profile.tagline")}</div>
       </div>
 
-      {/* Stats */}
       <div className="profile-stats-row">
         <div className="profile-stat">
           <div className="profile-stat-val">{totalHabits}</div>
-          <div className="profile-stat-lbl">habits</div>
+          <div className="profile-stat-lbl">{t("profile.statHabits")}</div>
         </div>
         <div className="profile-stat-divider" />
         <div className="profile-stat">
           <div className="profile-stat-val">{totalTasksDone}</div>
-          <div className="profile-stat-lbl">tasks done</div>
+          <div className="profile-stat-lbl">{t("profile.statTasksDone")}</div>
         </div>
         <div className="profile-stat-divider" />
         <div className="profile-stat">
           <div className="profile-stat-val">{streak}d</div>
-          <div className="profile-stat-lbl">streak</div>
+          <div className="profile-stat-lbl">{t("profile.statStreak")}</div>
         </div>
       </div>
 
       <div className="profile-divider" />
 
-      {/* Backup buttons */}
       <div className="profile-action">
         <button className="btn-block lime" onClick={handleExport}>
-          <IconDown /> Export Backup
+          <IconDown /> {t("profile.exportBtn")}
         </button>
-        <div className="profile-action-sub">save a .json file you can restore anytime</div>
+        <div className="profile-action-sub">{t("profile.exportSub")}</div>
       </div>
 
       <div className="profile-action" style={{ marginTop: 10 }}>
         <button className="btn-block ghost" onClick={handleImportClick}>
-          <IconUp /> Import Backup
+          <IconUp /> {t("profile.importBtn")}
         </button>
-        <div className="profile-action-sub">restore from a previously exported file</div>
+        <div className="profile-action-sub">{t("profile.importSub")}</div>
       </div>
 
       <div className="profile-divider" />
 
-      {/* Reset */}
       <div className="profile-action">
         <button className="btn-block danger-outline" onClick={onReset}>
-          Reset All Data
+          {t("profile.resetBtn")}
         </button>
-        <div className="profile-action-sub">wipe everything and start fresh</div>
+        <div className="profile-action-sub">{t("profile.resetSub")}</div>
       </div>
 
       <div style={{ flex: 1 }} />
 
       <div className="profile-made-by">
-        This app was made by Claudio Dalla Libera
+        {t("profile.madeBy")}
       </div>
 
       <div className="profile-kofi-wrap">
@@ -150,7 +149,7 @@ export default function ProfileScreen({
       </div>
 
       <div className="profile-footer-text">
-        no accounts · no cloud · no ads · open on any device with your backup file
+        {t("profile.footerText")}
       </div>
 
       <input
@@ -163,9 +162,9 @@ export default function ProfileScreen({
 
       <ConfirmDialog
         open={!!importDialog}
-        title="Import backup?"
+        title={t("profile.importDialogTitle")}
         message={importDialog?.message || ""}
-        confirmLabel="Import"
+        confirmLabel={t("profile.importConfirmBtn")}
         onCancel={() => setImportDialog(null)}
         onConfirm={confirmImport}
       />

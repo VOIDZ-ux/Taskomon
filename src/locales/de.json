@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "settings": "Einstellungen",
+    "profile": "Profil"
+  },
+  "habits": {
+    "title": "Gewohnheiten",
+    "expand": "Gewohnheiten erweitern",
+    "collapse": "Gewohnheiten reduzieren",
+    "todayCount": "{{done}}/{{total}} heute",
+    "newHabit": "Neue Gewohnheit",
+    "emptyCard": "Keine Gewohnheiten",
+    "collapsedStrip": "{{count}} Gewohnheiten · Tippen zum Erweitern"
+  },
+  "tasks": {
+    "title": "Aufgaben",
+    "expand": "Aufgaben erweitern",
+    "collapse": "Aufgaben reduzieren",
+    "activeCount": "{{count}} aktiv",
+    "newTask": "Neue Aufgabe",
+    "emptyCard": "Keine aktiven Aufgaben",
+    "emptyCardHint": "Keine Aufgaben · Tippe + zum Hinzufügen",
+    "collapsedStrip": "{{count}} Aufgaben · Tippen zum Erweitern"
+  },
+  "pantry": {
+    "title": "Vorrat",
+    "expand": "Vorrat erweitern",
+    "collapse": "Vorrat reduzieren",
+    "dormantCount": "{{count}} wartend",
+    "addBtn": "Zum Vorrat hinzufügen",
+    "emptyCard": "Vorrat leer",
+    "collapsedStrip": "{{count}} wartend · Tippen zum Erweitern"
+  },
+  "calendar": {
+    "title": "Kalender",
+    "thisWeek": "Diese Woche",
+    "thirtyDays": "30 Tage",
+    "oneYear": "1 Jahr",
+    "allTime": "Gesamt",
+    "completionRate": "Abschlussrate",
+    "bestStreak": "Beste Serie",
+    "missed": "verpasst"
+  },
+  "sort": {
+    "btn": "Sortieren",
+    "az": "A→Z",
+    "byDate": "Nach Datum"
+  },
+  "row": {
+    "dragToReorder": "Ziehen zum Sortieren",
+    "doneTitle": "Wird um Mitternacht im Kalender archiviert",
+    "donePill": "erledigt · archiviert um Mitternacht",
+    "moveToPantryTitle": "Zurück in den Vorrat",
+    "gracePill": "↩ Vorrat · {{time}}",
+    "missedDays": "verpasst {{count}}T",
+    "dueToday": "heute fällig",
+    "configure": "Konfigurieren",
+    "weekProgress": "{{done}}/{{goal}} diese Woche",
+    "moveToTasks": "Zu Aufgaben verschieben",
+    "activate": "Aktivieren"
+  },
+  "sheet": {
+    "editHabit": "GEWOHNHEIT BEARBEITEN",
+    "editTask": "AUFGABE BEARBEITEN",
+    "newInPantry": "NEU IM VORRAT",
+    "new": "NEU",
+    "kindHabit": "Gewohnheit",
+    "kindTask": "Aufgabe",
+    "hintPantry": "Im Vorrat gespeichert · inaktiv bis du es aktivierst",
+    "hintHabit": "Wiederkehrend · trägt zum wöchentlichen % gemäß Ziel bei",
+    "hintTask": "Einmalig · muss heute erledigt werden, sonst gilt es als verpasst",
+    "placeholderHabit": "z.B. meditieren",
+    "placeholderTask": "z.B. Rechnung senden",
+    "weeklyGoal": "Wochenziel",
+    "perWeek": "× / Woche",
+    "goalLabel1": "Einmal pro Woche",
+    "goalLabel2": "Zweimal pro Woche",
+    "goalLabel3": "3 Tage pro Woche",
+    "goalLabel4": "4 Tage pro Woche",
+    "goalLabel5": "5 Tage pro Woche",
+    "goalLabel6": "6 Tage pro Woche",
+    "goalLabel7": "Jeden Tag",
+    "colorLabel": "Farbe",
+    "reservedColor": "Reserviert von einer gelöschten Gewohnheit",
+    "usedColor": "Von einem anderen Element verwendet",
+    "customColor": "Benutzerdefinierte Farbe",
+    "colorInUse": "Diese Farbe wird bereits verwendet.",
+    "deleteHabit": "Gewohnheit löschen",
+    "deleteTask": "Aufgabe löschen",
+    "cancel": "Abbrechen",
+    "add": "+ Hinzufügen",
+    "save": "Speichern"
+  },
+  "deleteDialog": {
+    "title": "\"{{name}}\" löschen?",
+    "habitMessage": "Wählen Sie, was mit dem Fortschritt dieser Gewohnheit in Ihrem Kalender geschehen soll.",
+    "taskMessage": "Diese Aufgabe wird entfernt. Auch aus dem Kalender löschen?",
+    "keepHistory": "Verlauf behalten · Farbe reservieren",
+    "wipeAll": "Alles löschen",
+    "cancel": "Abbrechen",
+    "reservedNote": "Wenn behalten, kann {{color}} nicht wiederverwendet werden."
+  },
+  "profile": {
+    "title": "Profil",
+    "statHabits": "Gewohnheiten",
+    "statTasksDone": "erledigte Aufgaben",
+    "statStreak": "Serie",
+    "tagline": "deine Daten sind hier, auf diesem Gerät. nirgendwo sonst.",
+    "exportBtn": "Backup exportieren",
+    "exportSub": "speichert eine .json-Datei, die du jederzeit wiederherstellen kannst",
+    "importBtn": "Backup importieren",
+    "importSub": "von einer zuvor exportierten Datei wiederherstellen",
+    "resetBtn": "Alles zurücksetzen",
+    "resetSub": "alles löschen und neu beginnen",
+    "madeBy": "Diese App wurde von Claudio Dalla Libera erstellt",
+    "footerText": "keine Konten · keine Cloud · keine Werbung · auf jedem Gerät mit deiner Backup-Datei öffnen",
+    "importDialogTitle": "Backup importieren?",
+    "importDialogMessage": "{{habits}} Gewohnheiten und {{tasks}} Aufgaben aus dem Backup vom {{date}} importieren? Dies überschreibt deine aktuellen Daten.",
+    "importConfirmBtn": "Importieren",
+    "exportedToast": "Backup exportiert!",
+    "exportFailedToast": "Export fehlgeschlagen",
+    "invalidBackupToast": "Ungültiges Backup: {{error}}"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "weekSection": "Woche",
+    "weekStartLabel": "Woche beginnt am",
+    "creatureSection": "Kreatur",
+    "thresholdLabel": "Abschlussschwelle",
+    "thresholdSub": "Wöchentliche %, um Mon gesund zu halten",
+    "thresholdRange": "0 — 100",
+    "daySection": "Tag",
+    "rolloverLabel": "Tageswechsel",
+    "rolloverSub": "Wann Aufgaben ablaufen und Gewohnheiten zurückgesetzt werden. Später wählen, wenn du nachts arbeitest.",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "Dein Tag beginnt um Mitternacht neu.",
+    "rolloverHour": "Dein Tag beginnt um {{hour}} neu. Alles davor zählt noch als vorheriger Tag.",
+    "displaySection": "Anzeige",
+    "showClock": "Uhr auf dem Hauptbildschirm anzeigen",
+    "format24h": "24h-Format",
+    "devTools": "DEV TOOLS",
+    "devSimulate": "Woche simulieren",
+    "devSimulateSub": "bis zu 60s auf Auslöser warten",
+    "devHatch": "Schlüpfen erzwingen",
+    "devIll": "Kranken Zustand erzwingen",
+    "devGolden": "Goldenen Zustand erzwingen"
+  },
+  "illDialog": {
+    "title": "Mon fühlt sich nicht gut",
+    "message": "Die Abschlussrate dieser Woche ist unter deinen Schwellenwert gefallen. Schließe weiter Gewohnheiten und Aufgaben ab, um Mon zu heilen — oder senke den Wochenschwellenwert in den Einstellungen, wenn die Anforderung zu hoch erscheint.",
+    "gotIt": "Verstanden",
+    "settings": "Einstellungen"
+  },
+  "setup": {
+    "welcome": "WILLKOMMEN BEI TASKOMON",
+    "intro": "Bevor wir beginnen, richte ein paar Einstellungen ein, damit dein Mon weiß, wann deine Woche beginnt und endet.",
+    "weekStartLabel": "Woche beginnt am",
+    "rolloverLabel": "Tageswechsel",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "Dein Tag beginnt um Mitternacht neu.",
+    "rolloverHour": "Dein Tag beginnt um {{hour}} neu. Alles davor zählt noch als vorheriger Tag.",
+    "startBtn": "Los geht's!"
+  },
+  "onboarding": {
+    "title": "WIE ES FUNKTIONIERT",
+    "intro": "Es gibt drei Arten von Elementen. Jedes beeinflusst Mon anders.",
+    "habitsLabel": "Gewohnheiten",
+    "habitsDesc": "Wiederkehrende Ziele, die du eine bestimmte Anzahl von Malen pro Woche erreichen möchtest — \"laufen 3×\", \"täglich meditieren\". Sie bilden Mons wöchentlichen Gesundheitswert. Fällst du unter deinen Schwellenwert, wird Mon krank.",
+    "tasksLabel": "Aufgaben",
+    "tasksDesc": "Tägliche Verpflichtungen. Alles, was beim Tageswechsel unvollständig bleibt, schadet Mons Gesundheit. Füge nur Dinge hinzu, die du wirklich heute erledigen willst.",
+    "pantryLabel": "Vorrat",
+    "pantryDesc": "Ein druckfreier Bereich für Dinge auf deinem Radar. Aktiviere ein Element, wenn du bereit bist — es wird zur Aufgabe des Tages. Du hast 3 Stunden, um es in den Vorrat zurückzulegen. Danach bleibt es als Aufgabe.",
+    "gotIt": "Verstanden!"
+  },
+  "app": {
+    "backToExit": "Nochmals Zurück drücken zum Beenden",
+    "resetTitle": "Alle Fortschritte zurücksetzen?",
+    "resetMessage": "Alle Gewohnheiten, Aufgaben, Vorratseinträge und der Kalenderverlauf werden gelöscht. Dein Mon kehrt als Ei zurück.",
+    "resetBtn": "Zurücksetzen"
+  },
+  "confirm": {
+    "cancel": "Abbrechen"
+  },
+  "date": {
+    "weekdays": ["SO","MO","DI","MI","DO","FR","SA"],
+    "months": ["JAN","FEB","MÄR","APR","MAI","JUN","JUL","AUG","SEP","OKT","NOV","DEZ"]
+  },
+  "lang": {
+    "label": "Sprache",
+    "en": "English",
+    "it": "Italiano",
+    "es": "Español",
+    "pt": "Português",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語"
+  }
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
-import { MONTH_SHORT, WEEKDAY_SHORT, dateKey, startOfWeekDate } from "../utils/dateHelpers.js";
+import { useTranslation } from "react-i18next";
+import { dateKey, startOfWeekDate } from "../utils/dateHelpers.js";
 import {
   IconGear, IconUser, IconSort, IconRepeat, IconCheckCircle, IconArchive,
 } from "./Icons.jsx";
@@ -8,6 +9,14 @@ import HabitRow from "./HabitRow.jsx";
 import TaskRow from "./TaskRow.jsx";
 import PantryRow from "./PantryRow.jsx";
 import Chart from "./Chart.jsx";
+import LanguageSelector from "./LanguageSelector.jsx";
+
+const RANGE_KEYS = {
+  "This Week": "thisWeek",
+  "30 Days": "thirtyDays",
+  "1 Year": "oneYear",
+  "All Time": "allTime",
+};
 
 export default function MainScreen({
   active,
@@ -28,6 +37,9 @@ export default function MainScreen({
   onReorderHabits, onReorderTasks, onReorderPantry,
   range, setRange,
 }) {
+  const { t, i18n } = useTranslation();
+  const weekdays = t("date.weekdays", { returnObjects: true });
+  const months = t("date.months", { returnObjects: true });
   const nowDate = new Date(now);
   const todayK = (() => {
     const dd = new Date(nowDate);
@@ -42,7 +54,7 @@ export default function MainScreen({
   const displayTime = prefs.h24
     ? `${String(hour24).padStart(2, "0")}:${String(nowDate.getMinutes()).padStart(2, "0")}`
     : `${hour12}:${String(nowDate.getMinutes()).padStart(2, "0")} ${ampm}`;
-  const displayDate = `${WEEKDAY_SHORT[nowDate.getDay()]} · ${String(nowDate.getDate()).padStart(2, "0")} ${MONTH_SHORT[nowDate.getMonth()]} ${nowDate.getFullYear()}`;
+  const displayDate = `${weekdays[nowDate.getDay()]} · ${String(nowDate.getDate()).padStart(2, "0")} ${months[nowDate.getMonth()]} ${nowDate.getFullYear()}`;
 
   // ─── Drag and drop ────────────────────────────────────────
   const [draggingId, setDraggingId] = useState(null);
@@ -149,15 +161,15 @@ export default function MainScreen({
     <div style={{ position: "relative" }}>
       <button
         className="sort-btn"
-        title="Sort"
+        title={t("sort.btn")}
         onClick={() => setOpenSort(openSort === section ? null : section)}
       >
         <IconSort size={11} />
       </button>
       {openSort === section && (
         <div className="sort-drop">
-          <button onClick={() => sortSection(section, "az")}>A→Z</button>
-          <button onClick={() => sortSection(section, "date")}>By date</button>
+          <button onClick={() => sortSection(section, "az")}>{t("sort.az")}</button>
+          <button onClick={() => sortSection(section, "date")}>{t("sort.byDate")}</button>
         </div>
       )}
     </div>
@@ -201,7 +213,6 @@ export default function MainScreen({
 
   const chartView = useMemo(() => {
     if (range === "This Week") {
-      // Days from the start of the current week up to today
       const weekStartDate = startOfWeekDate(nowDate, prefs.weekStart);
       const cells = [];
       const d = new Date(weekStartDate);
@@ -247,17 +258,15 @@ export default function MainScreen({
     startDate.setDate(startDate.getDate() - (numWeeks * 7 - 1));
     const midDate = new Date(nowDate);
     midDate.setDate(midDate.getDate() - Math.floor((numWeeks * 7) / 2));
-    const fmt = (d) => `${MONTH_SHORT[d.getMonth()]} ${d.getFullYear() % 100}`;
+    const fmt = (d) => `${months[d.getMonth()]} ${d.getFullYear() % 100}`;
     return { mode: "weekly", cells, xAxis: "range", startLabel: fmt(startDate), midLabel: fmt(midDate), endLabel: "NOW" };
-  }, [range, prefs.weekStart, registryItems, todayK, nowDate.toDateString()]);
+  }, [range, prefs.weekStart, registryItems, todayK, nowDate.toDateString(), i18n.language]);
 
   // ─── Stats ────────────────────────────────────────────────
   const completionPct = useMemo(() => {
     let earned = 0, total = 0;
 
     if (range === "This Week") {
-      // Only count days from the start of the current week up to today —
-      // the same window that drives Mon's health score.
       const weekStartDate = startOfWeekDate(nowDate, prefs.weekStart);
       const days = [];
       const d = new Date(weekStartDate);
@@ -295,7 +304,6 @@ export default function MainScreen({
           if (t.status === "done") earned += 1;
         }
       }
-      // Include active tasks whose dueDate falls in this period
       for (const t of tasks) {
         if (days.includes(t.dueDate)) {
           total += 1;
@@ -340,8 +348,9 @@ export default function MainScreen({
       <div className="header">
         <img className="logo" src={import.meta.env.BASE_URL + "TaskomonLogo.png"} alt="Taskomon" />
         <div className="icon-row">
-          <button className="icon-btn" title="Settings" onClick={onGoSettings}><IconGear /></button>
-          <button className="icon-btn" title="Profile" onClick={onGoProfile}><IconUser /></button>
+          <LanguageSelector />
+          <button className="icon-btn" title={t("nav.settings")} onClick={onGoSettings}><IconGear /></button>
+          <button className="icon-btn" title={t("nav.profile")} onClick={onGoProfile}><IconUser /></button>
         </div>
       </div>
 
@@ -366,11 +375,11 @@ export default function MainScreen({
       <div className="section-label">
         <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
           <IconRepeat size={10} />
-          <span>Habits</span>
+          <span>{t("habits.title")}</span>
           <button
             className={`collapse-btn ${prefs.habitsCollapsed ? "collapsed" : ""}`}
             onClick={() => setPrefs(p => ({ ...p, habitsCollapsed: !p.habitsCollapsed }))}
-            title={prefs.habitsCollapsed ? "Expand habits" : "Collapse habits"}
+            title={prefs.habitsCollapsed ? t("habits.expand") : t("habits.collapse")}
             aria-expanded={!prefs.habitsCollapsed}
           >
             <svg className="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -379,9 +388,9 @@ export default function MainScreen({
           </button>
         </span>
         <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
-          <span className="count">{habitDoneTodayCount}/{habits.length} today</span>
+          <span className="count">{t("habits.todayCount", { done: habitDoneTodayCount, total: habits.length })}</span>
           <SortDrop section="habits" />
-          <button className="section-add" title="New habit" onClick={() => onOpenAdd("habit")}>+</button>
+          <button className="section-add" title={t("habits.newHabit")} onClick={() => onOpenAdd("habit")}>+</button>
         </span>
       </div>
       {prefs.habitsCollapsed ? (
@@ -393,14 +402,14 @@ export default function MainScreen({
                   <div key={h.id} style={{ background: h.color }} />
                 ))}
               </div>
-              <span>{habits.length} habits · tap to expand</span>
+              <span>{t("habits.collapsedStrip", { count: habits.length })}</span>
             </>
           ) : (
-            <span style={{ textAlign: "center", flex: 1 }}>No habits yet</span>
+            <span style={{ textAlign: "center", flex: 1 }}>{t("habits.emptyCard")}</span>
           )}
         </div>
       ) : habits.length === 0 ? (
-        <div className="card"><div className="empty-row">No habits yet</div></div>
+        <div className="card"><div className="empty-row">{t("habits.emptyCard")}</div></div>
       ) : (
         <div className="task-list">
           {habits.map(h => (
@@ -422,11 +431,11 @@ export default function MainScreen({
       <div className="section-label">
         <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
           <IconCheckCircle size={10} />
-          <span>Tasks</span>
+          <span>{t("tasks.title")}</span>
           <button
             className={`collapse-btn ${prefs.tasksCollapsed ? "collapsed" : ""}`}
             onClick={() => setPrefs(p => ({ ...p, tasksCollapsed: !p.tasksCollapsed }))}
-            title={prefs.tasksCollapsed ? "Expand tasks" : "Collapse tasks"}
+            title={prefs.tasksCollapsed ? t("tasks.expand") : t("tasks.collapse")}
             aria-expanded={!prefs.tasksCollapsed}
           >
             <svg className="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -435,9 +444,9 @@ export default function MainScreen({
           </button>
         </span>
         <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
-          <span className="count">{tasks.length} active</span>
+          <span className="count">{t("tasks.activeCount", { count: tasks.length })}</span>
           <SortDrop section="tasks" />
-          <button className="section-add" title="New task" onClick={() => onOpenAdd("task")}>+</button>
+          <button className="section-add" title={t("tasks.newTask")} onClick={() => onOpenAdd("task")}>+</button>
         </span>
       </div>
       {prefs.tasksCollapsed ? (
@@ -449,14 +458,14 @@ export default function MainScreen({
                   <div key={t.id} style={{ background: t.color }} />
                 ))}
               </div>
-              <span>{tasks.length} tasks · tap to expand</span>
+              <span>{t("tasks.collapsedStrip", { count: tasks.length })}</span>
             </>
           ) : (
-            <span style={{ textAlign: "center", flex: 1 }}>No active tasks</span>
+            <span style={{ textAlign: "center", flex: 1 }}>{t("tasks.emptyCard")}</span>
           )}
         </div>
       ) : tasks.length === 0 ? (
-        <div className="card"><div className="empty-row">No active tasks · tap + to commit</div></div>
+        <div className="card"><div className="empty-row">{t("tasks.emptyCardHint")}</div></div>
       ) : (
         <div className="task-list">
           {tasks.map(t => (
@@ -479,11 +488,11 @@ export default function MainScreen({
       <div className="section-label">
         <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
           <IconArchive size={10} />
-          <span>Pantry</span>
+          <span>{t("pantry.title")}</span>
           <button
             className={`collapse-btn ${prefs.pantryCollapsed ? "collapsed" : ""}`}
             onClick={() => setPrefs(p => ({ ...p, pantryCollapsed: !p.pantryCollapsed }))}
-            title={prefs.pantryCollapsed ? "Expand pantry" : "Collapse pantry"}
+            title={prefs.pantryCollapsed ? t("pantry.expand") : t("pantry.collapse")}
             aria-expanded={!prefs.pantryCollapsed}
           >
             <svg className="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -492,9 +501,9 @@ export default function MainScreen({
           </button>
         </span>
         <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
-          <span className="count">{pantry.length} dormant</span>
+          <span className="count">{t("pantry.dormantCount", { count: pantry.length })}</span>
           <SortDrop section="pantry" />
-          <button className="section-add" title="Add to pantry" onClick={() => onOpenAdd("task", { toPantry: true })}>+</button>
+          <button className="section-add" title={t("pantry.addBtn")} onClick={() => onOpenAdd("task", { toPantry: true })}>+</button>
         </span>
       </div>
       {prefs.pantryCollapsed ? (
@@ -506,14 +515,14 @@ export default function MainScreen({
                   <div key={p.id} style={{ background: p.color }} />
                 ))}
               </div>
-              <span>{pantry.length} dormant · tap to expand</span>
+              <span>{t("pantry.collapsedStrip", { count: pantry.length })}</span>
             </>
           ) : (
-            <span style={{ textAlign: "center", flex: 1 }}>Pantry is empty</span>
+            <span style={{ textAlign: "center", flex: 1 }}>{t("pantry.emptyCard")}</span>
           )}
         </div>
       ) : pantry.length === 0 ? (
-        <div className="card"><div className="empty-row">Pantry is empty</div></div>
+        <div className="card"><div className="empty-row">{t("pantry.emptyCard")}</div></div>
       ) : (
         <div className={`task-list pantry-card ${pantry.length > 4 ? "scroll" : ""}`}>
           {pantry.map(p => (
@@ -531,36 +540,38 @@ export default function MainScreen({
 
       {/* CALENDAR */}
       <div className="section-label">
-        <span>Calendar</span>
-        <span className="count">{range.toUpperCase()}</span>
+        <span>{t("calendar.title")}</span>
+        <span className="count">{t(`calendar.${RANGE_KEYS[range]}`).toUpperCase()}</span>
       </div>
       <div className="chips">
         {ranges.map(r => (
-          <button key={r} className={`chip ${range === r ? "active" : ""}`} onClick={() => setRange(r)}>{r}</button>
+          <button key={r} className={`chip ${range === r ? "active" : ""}`} onClick={() => setRange(r)}>
+            {t(`calendar.${RANGE_KEYS[r]}`)}
+          </button>
         ))}
       </div>
       <div className="card stats-card">
         <div className="stats-top">
           <div>
             <div className="pct">{completionPct}%</div>
-            <div className="pct-label">Completion Rate</div>
+            <div className="pct-label">{t("calendar.completionRate")}</div>
           </div>
           <div className="streak-mini">
             <div className="val">🔥 {bestStreak}d</div>
-            <div className="lbl">Best Streak</div>
+            <div className="lbl">{t("calendar.bestStreak")}</div>
           </div>
         </div>
         <Chart view={chartView} registryItems={registryItems} />
         <div className="legend">
-          {registryItems.map(t => (
-            <div className={`legend-item ${t.ghost ? "ghost" : ""}`} key={t.id}>
-              <div className="legend-dot" style={{ background: t.color }} />
-              <span>{t.name}</span>
+          {registryItems.map(item => (
+            <div className={`legend-item ${item.ghost ? "ghost" : ""}`} key={item.id}>
+              <div className="legend-dot" style={{ background: item.color }} />
+              <span>{item.name}</span>
             </div>
           ))}
           <div className="legend-item" style={{ marginLeft: "auto" }}>
             <div className="legend-dot" style={{ background: "#EF4444", backgroundImage: "repeating-linear-gradient(45deg, rgba(0,0,0,0.18) 0 2px, transparent 2px 4px)" }} />
-            <span>missed</span>
+            <span>{t("calendar.missed")}</span>
           </div>
         </div>
       </div>

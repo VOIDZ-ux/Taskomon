@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "settings": "設定",
+    "profile": "プロフィール"
+  },
+  "habits": {
+    "title": "習慣",
+    "expand": "習慣を展開",
+    "collapse": "習慣を折りたたむ",
+    "todayCount": "今日 {{done}}/{{total}}",
+    "newHabit": "新しい習慣",
+    "emptyCard": "習慣なし",
+    "collapsedStrip": "習慣 {{count}} 件 · タップして展開"
+  },
+  "tasks": {
+    "title": "タスク",
+    "expand": "タスクを展開",
+    "collapse": "タスクを折りたたむ",
+    "activeCount": "{{count}} 件アクティブ",
+    "newTask": "新しいタスク",
+    "emptyCard": "アクティブなタスクなし",
+    "emptyCardHint": "タスクなし · + をタップして追加",
+    "collapsedStrip": "タスク {{count}} 件 · タップして展開"
+  },
+  "pantry": {
+    "title": "パントリー",
+    "expand": "パントリーを展開",
+    "collapse": "パントリーを折りたたむ",
+    "dormantCount": "{{count}} 件待機中",
+    "addBtn": "パントリーに追加",
+    "emptyCard": "パントリーは空",
+    "collapsedStrip": "{{count}} 件待機中 · タップして展開"
+  },
+  "calendar": {
+    "title": "カレンダー",
+    "thisWeek": "今週",
+    "thirtyDays": "30日",
+    "oneYear": "1年",
+    "allTime": "全期間",
+    "completionRate": "達成率",
+    "bestStreak": "最高連続",
+    "missed": "未達成"
+  },
+  "sort": {
+    "btn": "並び替え",
+    "az": "A→Z",
+    "byDate": "日付順"
+  },
+  "row": {
+    "dragToReorder": "ドラッグして並び替え",
+    "doneTitle": "深夜にカレンダーへアーカイブされます",
+    "donePill": "完了 · 深夜にアーカイブ",
+    "moveToPantryTitle": "パントリーに戻す",
+    "gracePill": "↩ パントリー · {{time}}",
+    "missedDays": "未達成 {{count}}日",
+    "dueToday": "今日が期限",
+    "configure": "設定",
+    "weekProgress": "今週 {{done}}/{{goal}}",
+    "moveToTasks": "タスクに移動",
+    "activate": "アクティブ化"
+  },
+  "sheet": {
+    "editHabit": "習慣を編集",
+    "editTask": "タスクを編集",
+    "newInPantry": "パントリーに追加",
+    "new": "新規",
+    "kindHabit": "習慣",
+    "kindTask": "タスク",
+    "hintPantry": "パントリーに保存 · アクティブ化するまで休眠状態",
+    "hintHabit": "繰り返し · 目標に基づいて週間達成率に貢献",
+    "hintTask": "一回限り · 今日中に完了しないと未達成にカウント",
+    "placeholderHabit": "例：瞑想",
+    "placeholderTask": "例：請求書を送る",
+    "weeklyGoal": "週間目標",
+    "perWeek": "回 / 週",
+    "goalLabel1": "週1回",
+    "goalLabel2": "週2回",
+    "goalLabel3": "週3回",
+    "goalLabel4": "週4回",
+    "goalLabel5": "週5回",
+    "goalLabel6": "週6回",
+    "goalLabel7": "毎日",
+    "colorLabel": "カラー",
+    "reservedColor": "削除された習慣によって予約済み",
+    "usedColor": "別のアイテムで使用中",
+    "customColor": "カスタムカラー",
+    "colorInUse": "この色はすでに使用されています。",
+    "deleteHabit": "習慣を削除",
+    "deleteTask": "タスクを削除",
+    "cancel": "キャンセル",
+    "add": "+ 追加",
+    "save": "保存"
+  },
+  "deleteDialog": {
+    "title": "「{{name}}」を削除しますか？",
+    "habitMessage": "この習慣のカレンダーの進捗をどうするか選んでください。",
+    "taskMessage": "このタスクが削除されます。カレンダーからも消去しますか？",
+    "keepHistory": "履歴を残す · 色を予約",
+    "wipeAll": "すべて削除",
+    "cancel": "キャンセル",
+    "reservedNote": "保持した場合、{{color}} は再利用できません。"
+  },
+  "profile": {
+    "title": "プロフィール",
+    "statHabits": "習慣",
+    "statTasksDone": "完了タスク",
+    "statStreak": "連続",
+    "tagline": "データはここ、このデバイスにあります。それ以外の場所にはありません。",
+    "exportBtn": "バックアップを書き出す",
+    "exportSub": "いつでも復元できる .json ファイルを保存",
+    "importBtn": "バックアップを読み込む",
+    "importSub": "以前にエクスポートしたファイルから復元",
+    "resetBtn": "全データをリセット",
+    "resetSub": "すべて消去してやり直す",
+    "madeBy": "このアプリは Claudio Dalla Libera が作成しました",
+    "footerText": "アカウント不要 · クラウド不要 · 広告なし · バックアップファイルでどのデバイスでも開ける",
+    "importDialogTitle": "バックアップを読み込みますか？",
+    "importDialogMessage": "{{date}} のバックアップから {{habits}} 個の習慣と {{tasks}} 個のタスクを読み込みますか？現在のデータが上書きされます。",
+    "importConfirmBtn": "読み込む",
+    "exportedToast": "バックアップを書き出しました！",
+    "exportFailedToast": "書き出しに失敗しました",
+    "invalidBackupToast": "無効なバックアップ：{{error}}"
+  },
+  "settings": {
+    "title": "設定",
+    "weekSection": "週",
+    "weekStartLabel": "週の始まり",
+    "creatureSection": "キャラクター",
+    "thresholdLabel": "達成しきい値",
+    "thresholdSub": "Mon を健康に保つために必要な週間達成率",
+    "thresholdRange": "0 — 100",
+    "daySection": "日",
+    "rolloverLabel": "1日のリセット",
+    "rolloverSub": "タスクの期限と習慣のリセット時間。夜勤の場合は遅い時間を選んでください。",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "1日は深夜にリセットされます。",
+    "rolloverHour": "1日は {{hour}} にリセットされます。それ以前はすべて前日としてカウントされます。",
+    "displaySection": "表示",
+    "showClock": "メイン画面に時計を表示",
+    "format24h": "24時間表示",
+    "devTools": "開発ツール",
+    "devSimulate": "週完了をシミュレート",
+    "devSimulateSub": "孵化トリガーまで最大60秒待機",
+    "devHatch": "今すぐ孵化を強制",
+    "devIll": "病気状態を強制",
+    "devGolden": "ゴールデン状態を強制"
+  },
+  "illDialog": {
+    "title": "Mon の調子が悪い",
+    "message": "今週の達成率がしきい値を下回りました。習慣とタスクを完了し続けて Mon を回復させてください — または設定でしきい値を下げてみてください。",
+    "gotIt": "わかった",
+    "settings": "設定"
+  },
+  "setup": {
+    "welcome": "TASKOMONへようこそ",
+    "intro": "始める前に、あなたの Mon が週の始まりと終わりを認識できるよう、いくつかの設定を行ってください。",
+    "weekStartLabel": "週の始まり",
+    "rolloverLabel": "1日のリセット",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "1日は深夜にリセットされます。",
+    "rolloverHour": "1日は {{hour}} にリセットされます。それ以前はすべて前日としてカウントされます。",
+    "startBtn": "はじめよう！"
+  },
+  "onboarding": {
+    "title": "使い方",
+    "intro": "3種類のアイテムがあります。それぞれ Mon への影響が異なります。",
+    "habitsLabel": "習慣",
+    "habitsDesc": "毎週一定回数達成したい繰り返しの目標 — 「ランニング3×」「毎日瞑想」など。Mon の週間健康スコアを形成します。しきい値を下回ると Mon が病気になります。",
+    "tasksLabel": "タスク",
+    "tasksDesc": "毎日のコミットメント。リセット時に未完了のものはすべて Mon の健康に影響します。今日本当に終わらせるつもりのものだけ追加してください。",
+    "pantryLabel": "パントリー",
+    "pantryDesc": "レーダー上のものを保管するプレッシャーのないエリア。準備ができたらアイテムをアクティブ化してください — 当日のタスクになります。3時間以内なら気が変わってパントリーに戻せます。それ以降はタスクのままです。",
+    "gotIt": "わかった！"
+  },
+  "app": {
+    "backToExit": "もう一度戻るを押して終了",
+    "resetTitle": "全進行状況をリセットしますか？",
+    "resetMessage": "すべての習慣、タスク、パントリーのアイテム、カレンダーの履歴が削除されます。Mon は卵に戻ります。",
+    "resetBtn": "リセット"
+  },
+  "confirm": {
+    "cancel": "キャンセル"
+  },
+  "date": {
+    "weekdays": ["日","月","火","水","木","金","土"],
+    "months": ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
+  },
+  "lang": {
+    "label": "言語",
+    "en": "English",
+    "it": "Italiano",
+    "es": "Español",
+    "pt": "Português",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語"
+  }
+}

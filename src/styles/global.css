@@ -1077,6 +1077,29 @@ body {
 }
 .sort-drop button:hover { color: var(--fg); background: rgba(255,255,255,0.04); }
 
+/* ─── Language selector ─── */
+.lang-btn { font-size: 17px; line-height: 1; }
+.lang-drop {
+  position: absolute; right: 0; top: calc(100% + 4px);
+  background: var(--bg-deeper); border: 1px solid var(--border-strong);
+  border-radius: 8px; padding: 4px; z-index: 20;
+  display: flex; flex-direction: column; gap: 2px;
+  min-width: 130px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+}
+.lang-drop button {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; text-align: left; padding: 7px 10px;
+  background: transparent; border: none; border-radius: 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.5px;
+  color: var(--fg-mute); cursor: pointer;
+  transition: color .15s ease, background .15s ease;
+}
+.lang-drop button:hover { color: var(--fg); background: rgba(255,255,255,0.04); }
+.lang-drop button.active { color: var(--lime); }
+.lang-flag { font-size: 14px; line-height: 1; }
+
 /* ─── Missed indicator ─── */
 .missed-pill {
   display: inline-flex; align-items: center; gap: 5px;

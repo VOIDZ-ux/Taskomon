@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function SetupDialog({ open, onComplete }) {
+  const { t } = useTranslation();
   const [weekStart, setWeekStart] = useState("MON");
   const [resetHour, setResetHour] = useState(0);
 
   const hourLabel = String(resetHour).padStart(2, "0") + ":00";
   const hourHint = resetHour === 0
-    ? "Your day rolls over at midnight."
-    : `Your day rolls over at ${hourLabel}. Anything before that still counts as the previous day.`;
+    ? t("setup.rolloverMidnight")
+    : t("setup.rolloverHour", { hour: hourLabel });
 
   return (
     <div className={`dialog-backdrop ${open ? "open" : ""}`}>
@@ -17,31 +19,23 @@ export default function SetupDialog({ open, onComplete }) {
           <img src={import.meta.env.BASE_URL + "EggSprite.png"} alt="egg" style={{ width: 64, height: 64, imageRendering: "pixelated" }} />
         </div>
 
-        <h4>WELCOME TO TASKOMON</h4>
-        <p>Before we start, set up a couple of preferences so your Mon knows when your week begins and ends.</p>
+        <h4>{t("setup.welcome")}</h4>
+        <p>{t("setup.intro")}</p>
 
-        {/* ── Week start ─────────────────────────── */}
         <div className="setup-field">
-          <div className="setup-field-label">Week starts on</div>
+          <div className="setup-field-label">{t("setup.weekStartLabel")}</div>
           <div className="pill-toggle">
-            <button
-              className={weekStart === "MON" ? "on" : ""}
-              onClick={() => setWeekStart("MON")}
-            >MON</button>
-            <button
-              className={weekStart === "SUN" ? "on" : ""}
-              onClick={() => setWeekStart("SUN")}
-            >SUN</button>
+            <button className={weekStart === "MON" ? "on" : ""} onClick={() => setWeekStart("MON")}>MON</button>
+            <button className={weekStart === "SUN" ? "on" : ""} onClick={() => setWeekStart("SUN")}>SUN</button>
           </div>
         </div>
 
-        {/* ── Day rollover ───────────────────────── */}
         <div className="setup-field">
-          <div className="setup-field-label">Day rollover</div>
+          <div className="setup-field-label">{t("setup.rolloverLabel")}</div>
           <div className="hour-pop" style={{ background: "transparent", border: "none", padding: 0 }}>
             <div className="hp-readout">
               <span className="hp-val">{hourLabel}</span>
-              <span className="hp-help">00 — 23</span>
+              <span className="hp-help">{t("setup.rolloverRange")}</span>
             </div>
             <input
               type="range" min="0" max="23" step="1" value={resetHour}
@@ -58,7 +52,7 @@ export default function SetupDialog({ open, onComplete }) {
             style={{ flex: 1 }}
             onClick={() => onComplete(weekStart, resetHour)}
           >
-            Let's go!
+            {t("setup.startBtn")}
           </button>
         </div>
 

@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "settings": "Ajustes",
+    "profile": "Perfil"
+  },
+  "habits": {
+    "title": "Hábitos",
+    "expand": "Expandir hábitos",
+    "collapse": "Contraer hábitos",
+    "todayCount": "{{done}}/{{total}} hoy",
+    "newHabit": "Nuevo hábito",
+    "emptyCard": "Sin hábitos",
+    "collapsedStrip": "{{count}} hábitos · toca para expandir"
+  },
+  "tasks": {
+    "title": "Tareas",
+    "expand": "Expandir tareas",
+    "collapse": "Contraer tareas",
+    "activeCount": "{{count}} activas",
+    "newTask": "Nueva tarea",
+    "emptyCard": "Sin tareas activas",
+    "emptyCardHint": "Sin tareas · toca + para añadir",
+    "collapsedStrip": "{{count}} tareas · toca para expandir"
+  },
+  "pantry": {
+    "title": "Despensa",
+    "expand": "Expandir despensa",
+    "collapse": "Contraer despensa",
+    "dormantCount": "{{count}} en espera",
+    "addBtn": "Añadir a la despensa",
+    "emptyCard": "Despensa vacía",
+    "collapsedStrip": "{{count}} en espera · toca para expandir"
+  },
+  "calendar": {
+    "title": "Calendario",
+    "thisWeek": "Esta semana",
+    "thirtyDays": "30 días",
+    "oneYear": "1 año",
+    "allTime": "Siempre",
+    "completionRate": "Tasa de completitud",
+    "bestStreak": "Mejor racha",
+    "missed": "perdida"
+  },
+  "sort": {
+    "btn": "Ordenar",
+    "az": "A→Z",
+    "byDate": "Por fecha"
+  },
+  "row": {
+    "dragToReorder": "Arrastra para reordenar",
+    "doneTitle": "Se archivará en el Calendario a medianoche",
+    "donePill": "hecho · archiva a medianoche",
+    "moveToPantryTitle": "Mover a la despensa",
+    "gracePill": "↩ despensa · {{time}}",
+    "missedDays": "perdida {{count}}d",
+    "dueToday": "vence hoy",
+    "configure": "Configurar",
+    "weekProgress": "{{done}}/{{goal}} esta semana",
+    "moveToTasks": "Mover a tareas",
+    "activate": "Activar"
+  },
+  "sheet": {
+    "editHabit": "EDITAR HÁBITO",
+    "editTask": "EDITAR TAREA",
+    "newInPantry": "NUEVO EN DESPENSA",
+    "new": "NUEVO",
+    "kindHabit": "Hábito",
+    "kindTask": "Tarea",
+    "hintPantry": "Guardado en la despensa · inactivo hasta que lo actives",
+    "hintHabit": "Recurrente · contribuye al % semanal según el objetivo",
+    "hintTask": "Puntual · debe completarse hoy o cuenta como perdida",
+    "placeholderHabit": "ej. meditar",
+    "placeholderTask": "ej. enviar factura",
+    "weeklyGoal": "Objetivo semanal",
+    "perWeek": "× / semana",
+    "goalLabel1": "Una vez a la semana",
+    "goalLabel2": "Dos veces a la semana",
+    "goalLabel3": "3 días a la semana",
+    "goalLabel4": "4 días a la semana",
+    "goalLabel5": "5 días a la semana",
+    "goalLabel6": "6 días a la semana",
+    "goalLabel7": "Cada día",
+    "colorLabel": "color",
+    "reservedColor": "Reservado por un hábito eliminado",
+    "usedColor": "Usado por otro elemento",
+    "customColor": "Color personalizado",
+    "colorInUse": "Este color ya está en uso.",
+    "deleteHabit": "Eliminar hábito",
+    "deleteTask": "Eliminar tarea",
+    "cancel": "Cancelar",
+    "add": "+ Añadir",
+    "save": "Guardar"
+  },
+  "deleteDialog": {
+    "title": "¿Eliminar \"{{name}}\"?",
+    "habitMessage": "Elige qué hacer con el progreso de este hábito en tu Calendario.",
+    "taskMessage": "Esta tarea se eliminará. ¿Borrarla también del Calendario?",
+    "keepHistory": "Mantener historial · reservar color",
+    "wipeAll": "Eliminar todo",
+    "cancel": "Cancelar",
+    "reservedNote": "Si se mantiene, {{color}} no podrá reutilizarse."
+  },
+  "profile": {
+    "title": "Perfil",
+    "statHabits": "hábitos",
+    "statTasksDone": "tareas hechas",
+    "statStreak": "racha",
+    "tagline": "tus datos viven aquí, en este dispositivo. en ningún otro lugar.",
+    "exportBtn": "Exportar copia",
+    "exportSub": "guarda un archivo .json que puedes restaurar en cualquier momento",
+    "importBtn": "Importar copia",
+    "importSub": "restaura desde un archivo exportado anteriormente",
+    "resetBtn": "Restablecer todo",
+    "resetSub": "borra todo y empieza de cero",
+    "madeBy": "Esta app fue creada por Claudio Dalla Libera",
+    "footerText": "sin cuentas · sin nube · sin anuncios · ábrela en cualquier dispositivo con tu copia de seguridad",
+    "importDialogTitle": "¿Importar copia?",
+    "importDialogMessage": "¿Importar {{habits}} hábitos y {{tasks}} tareas del backup del {{date}}? Esto sobreescribirá tus datos actuales.",
+    "importConfirmBtn": "Importar",
+    "exportedToast": "¡Copia exportada!",
+    "exportFailedToast": "Error al exportar",
+    "invalidBackupToast": "Copia no válida: {{error}}"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "weekSection": "Semana",
+    "weekStartLabel": "La semana empieza el",
+    "creatureSection": "Criatura",
+    "thresholdLabel": "Umbral de completitud",
+    "thresholdSub": "% semanal necesario para mantener a Mon saludable",
+    "thresholdRange": "0 — 100",
+    "daySection": "Día",
+    "rolloverLabel": "Reinicio del día",
+    "rolloverSub": "Cuándo vencen las tareas y se reinician los hábitos. Elige más tarde si trabajas de noche.",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "Tu día se reinicia a medianoche.",
+    "rolloverHour": "Tu día se reinicia a las {{hour}}. Todo lo anterior cuenta como el día previo.",
+    "displaySection": "Pantalla",
+    "showClock": "Mostrar reloj en pantalla principal",
+    "format24h": "Formato 24h",
+    "devTools": "DEV TOOLS",
+    "devSimulate": "Simular semana completa",
+    "devSimulateSub": "espera hasta 60s para el desencadenamiento",
+    "devHatch": "Forzar eclosión ahora",
+    "devIll": "Forzar estado enfermo",
+    "devGolden": "Forzar estado dorado"
+  },
+  "illDialog": {
+    "title": "Mon no se siente bien",
+    "message": "El completado de esta semana cayó por debajo de tu umbral. Sigue completando hábitos y tareas para que Mon se recupere — o baja el umbral semanal en Ajustes si la barra es demasiado alta.",
+    "gotIt": "Entendido",
+    "settings": "Ajustes"
+  },
+  "setup": {
+    "welcome": "BIENVENIDO A TASKOMON",
+    "intro": "Antes de empezar, configura algunas preferencias para que tu Mon sepa cuándo empieza y termina la semana.",
+    "weekStartLabel": "La semana empieza el",
+    "rolloverLabel": "Reinicio del día",
+    "rolloverRange": "00 — 23",
+    "rolloverMidnight": "Tu día se reinicia a medianoche.",
+    "rolloverHour": "Tu día se reinicia a las {{hour}}. Todo lo anterior cuenta como el día previo.",
+    "startBtn": "¡Vamos!"
+  },
+  "onboarding": {
+    "title": "CÓMO FUNCIONA",
+    "intro": "Hay tres tipos de elementos. Cada uno afecta a Mon de manera diferente.",
+    "habitsLabel": "Hábitos",
+    "habitsDesc": "Objetivos recurrentes que quieres alcanzar un número establecido de veces por semana — \"correr 3×\", \"meditar cada día\". Forman la puntuación de salud semanal de Mon. Si no alcanzas tu umbral, Mon enferma.",
+    "tasksLabel": "Tareas",
+    "tasksDesc": "Compromisos diarios. Cualquier cosa que quede incompleta cuando el día se reinicia cuenta en contra de la salud de Mon. Solo añade cosas que de verdad pienses terminar hoy.",
+    "pantryLabel": "Despensa",
+    "pantryDesc": "Una zona sin presión para las cosas en tu radar. Activa un elemento cuando estés listo — se convierte en una Tarea del día. Tienes 3 horas para arrepentirte y devolverla a la Despensa. Después, se queda como Tarea.",
+    "gotIt": "¡Entendido!"
+  },
+  "app": {
+    "backToExit": "Pulsa atrás de nuevo para salir",
+    "resetTitle": "¿Restablecer todo el progreso?",
+    "resetMessage": "Se borrarán todos los hábitos, tareas, elementos de la despensa e historial del calendario. Tu Mon volverá a ser un huevo.",
+    "resetBtn": "Restablecer"
+  },
+  "confirm": {
+    "cancel": "Cancelar"
+  },
+  "date": {
+    "weekdays": ["DOM","LUN","MAR","MIÉ","JUE","VIE","SÁB"],
+    "months": ["ENE","FEB","MAR","ABR","MAY","JUN","JUL","AGO","SEP","OCT","NOV","DIC"]
+  },
+  "lang": {
+    "label": "Idioma",
+    "en": "English",
+    "it": "Italiano",
+    "es": "Español",
+    "pt": "Português",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語"
+  }
+}
