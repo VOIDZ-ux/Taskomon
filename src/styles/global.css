@@ -20,10 +20,7 @@ html, body, #root {
 }
 
 body {
-  background:
-    radial-gradient(1200px 800px at 20% -10%, #2f2a3e 0%, transparent 60%),
-    radial-gradient(900px 700px at 110% 110%, #2a2336 0%, transparent 55%),
-    #1a171f;
+  background: var(--bg);
   font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
