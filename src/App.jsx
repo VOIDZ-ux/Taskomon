@@ -475,6 +475,7 @@ export default function App() {
   };
 
   return (
+    <>
     <div className="app-shell">
       <div className="screen-stack">
         <MainScreen
@@ -593,5 +594,7 @@ export default function App() {
         onDismiss={() => setPrefs(p => ({ ...p, onboardingDone: true }))}
       />
     </div>
+    <div className="page-vignette" />
+    </>
   );
 }

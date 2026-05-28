@@ -16,7 +16,7 @@ if (_search.includes("debug=sleep")) {
   if (isEmpty) initSleepDebug();
 }
 
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/Taskomon/sw.js')
       .then(() => console.log('[SW] registered'))

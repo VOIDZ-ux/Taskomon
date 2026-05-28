@@ -20,13 +20,20 @@ html, body, #root {
 }
 
 body {
-  background:
-    radial-gradient(1200px 800px at 20% -10%, #2f2a3e 0%, transparent 60%),
-    var(--bg);
+  background: var(--bg);
   font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+.page-vignette {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.35));
+  pointer-events: none;
+  z-index: 50;
 }
 
 /* ─── App shell: max-width container for desktop ─── */
