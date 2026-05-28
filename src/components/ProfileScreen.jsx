@@ -135,6 +135,20 @@ export default function ProfileScreen({
 
       <div style={{ flex: 1 }} />
 
+      <div className="profile-made-by">
+        This app was made by Claudio Dalla Libera
+      </div>
+
+      <div className="profile-kofi-wrap">
+        <a href="https://ko-fi.com/voidzsan" target="_blank" rel="noopener noreferrer">
+          <img
+            src={import.meta.env.BASE_URL + "support_me_on_kofi_red.png"}
+            alt="Support me on Ko-fi"
+            className="profile-kofi-btn"
+          />
+        </a>
+      </div>
+
       <div className="profile-footer-text">
         no accounts · no cloud · no ads · open on any device with your backup file
       </div>
