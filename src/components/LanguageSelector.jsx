@@ -2,14 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 const LANGS = [
-  { code: "en", flag: "🇬🇧", label: "English" },
-  { code: "it", flag: "🇮🇹", label: "Italiano" },
-  { code: "es", flag: "🇪🇸", label: "Español" },
-  { code: "pt", flag: "🇧🇷", label: "Português" },
-  { code: "fr", flag: "🇫🇷", label: "Français" },
-  { code: "de", flag: "🇩🇪", label: "Deutsch" },
-  { code: "zh", flag: "🇨🇳", label: "中文" },
-  { code: "ja", flag: "🇯🇵", label: "日本語" },
+  { code: "en", flag: "🇬🇧", label: "English",    short: "EN" },
+  { code: "it", flag: "🇮🇹", label: "Italiano",   short: "IT" },
+  { code: "es", flag: "🇪🇸", label: "Español",    short: "ES" },
+  { code: "pt", flag: "🇧🇷", label: "Português",  short: "PT" },
+  { code: "fr", flag: "🇫🇷", label: "Français",   short: "FR" },
+  { code: "de", flag: "🇩🇪", label: "Deutsch",    short: "DE" },
+  { code: "zh", flag: "🇨🇳", label: "中文",        short: "ZH" },
+  { code: "ja", flag: "🇯🇵", label: "日本語",      short: "JA" },
 ];
 
 export default function LanguageSelector() {
@@ -45,7 +45,7 @@ export default function LanguageSelector() {
         onClick={() => setOpen(o => !o)}
         title="Language"
       >
-        {current.flag}
+        {current.short}
       </button>
       {open && (
         <div className="lang-drop">

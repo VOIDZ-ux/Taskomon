@@ -1078,7 +1078,11 @@ body {
 .sort-drop button:hover { color: var(--fg); background: rgba(255,255,255,0.04); }
 
 /* ─── Language selector ─── */
-.lang-btn { font-size: 17px; line-height: 1; }
+.lang-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em;
+  line-height: 1;
+}
 .lang-drop {
   position: absolute; right: 0; top: calc(100% + 4px);
   background: var(--bg-deeper); border: 1px solid var(--border-strong);
