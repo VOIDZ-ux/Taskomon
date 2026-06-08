@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { adjustedDateKey, dateKey, startOfWeekDate } from "../utils/dateHelpers.js";
 import { sameColor } from "../utils/colorHelpers.js";
+import { computeHabitWeeklyStats } from "../utils/completionHelpers.js";
 
 const LS_KEY = "taskomon_state";
 
@@ -249,6 +250,13 @@ export default function useAppState(showToast) {
     const item = findItem(id);
     if (!item) return;
     if (item.kind === "habit") {
+      // Freeze this week's contribution into weekStats so it survives removal
+      const { numer: hN, denom: hD } = computeHabitWeeklyStats({
+        habits: [item], prefs, nowDate: new Date(),
+      });
+      if (hD > 0) {
+        setWeekStats(prev => ({ ...prev, numer: prev.numer + hN, denom: prev.denom + hD }));
+      }
       setGhostHabits(prev => [...prev, item]);
       setHabits(prev => prev.filter(x => x.id !== id));
     } else if (item.kind === "task") {

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { dateKey, startOfWeekDate } from "../utils/dateHelpers.js";
+import { computeHabitWeeklyStats } from "../utils/completionHelpers.js";
 import {
   IconGear, IconUser, IconSort, IconRepeat, IconCheckCircle, IconArchive,
 } from "./Icons.jsx";
@@ -35,6 +36,7 @@ export default function MainScreen({
   onOpenAdd, onSetEditId,
   onToggleHabit, onToggleTask, onSendToPantry, onActivatePantry,
   onReorderHabits, onReorderTasks, onReorderPantry,
+  weekStats,
   range, setRange,
 }) {
   const { t, i18n } = useTranslation();
@@ -267,22 +269,10 @@ export default function MainScreen({
     let earned = 0, total = 0;
 
     if (range === "This Week") {
-      const weekStartDate = startOfWeekDate(nowDate, prefs.weekStart);
-      const days = [];
-      const d = new Date(weekStartDate);
-      while (dateKey(d) <= todayK) { days.push(dateKey(d)); d.setDate(d.getDate() + 1); }
-      for (const h of habits) {
-        const doneThisWeek = days.reduce((acc, k) => acc + (h.completions[k] ? 1 : 0), 0);
-        earned += Math.min(doneThisWeek, h.weeklyGoal);
-        total += h.weeklyGoal;
-      }
-      for (const t of taskHistory) {
-        if (days.includes(t.date)) { total += 1; if (t.status === "done") earned += 1; }
-      }
-      for (const t of tasks) {
-        if (days.includes(t.dueDate)) { total += 1; if (t.completedDate === t.dueDate) earned += 1; }
-      }
-      return total ? Math.round((earned / total) * 100) : 0;
+      const { numer: hN, denom: hD } = computeHabitWeeklyStats({ habits, prefs, nowDate });
+      const totalNumer = weekStats.numer + hN;
+      const totalDenom = weekStats.denom + hD;
+      return totalDenom > 0 ? Math.round((totalNumer / totalDenom) * 100) : 0;
     }
 
     const numWeeks = range === "30 Days" ? 5 : 52;
@@ -312,7 +302,7 @@ export default function MainScreen({
       }
     }
     return total ? Math.round((earned / total) * 100) : 0;
-  }, [habits, tasks, taskHistory, range, prefs.weekStart, todayK, nowDate.toDateString()]);
+  }, [habits, tasks, taskHistory, weekStats, range, prefs.weekStart, todayK, nowDate.toDateString()]);
 
   const bestStreak = useMemo(() => {
     let best = 0;

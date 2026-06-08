@@ -22,30 +22,6 @@ const isHabitExpectedOnDay = (habit, dayDate, weekStart) => {
   return dayIdx < effectiveGoal;
 };
 
-// Compute current week's habit contribution using the FULL week as denominator.
-// Numerator = completions through today. Denominator = all 7 days' expected slots.
-// Used for hatchProgress so crack stage reflects the whole week, not just elapsed days.
-export const computeHabitProgressStats = ({ habits, prefs, nowDate }) => {
-  const weekStart = startOfWeekDate(nowDate, prefs.weekStart);
-  const jsDay = nowDate.getDay();
-  const todayIdx = prefs.weekStart === "MON" ? (jsDay + 6) % 7 : jsDay;
-
-  let numer = 0, denom = 0;
-  for (let i = 0; i < 7; i++) {
-    const dayDate = new Date(weekStart);
-    dayDate.setDate(dayDate.getDate() + i);
-    const dayK = dateKey(dayDate);
-    for (const h of habits) {
-      if (isHabitExpectedOnDay(h, dayDate, prefs.weekStart)) {
-        denom++;
-        if (i <= todayIdx && h.completions?.[dayK]) numer++;
-      }
-    }
-  }
-
-  return { numer, denom };
-};
-
 // Compute current week's habit contribution to numerator and denominator only.
 // Task contribution is tracked separately via explicit weekStats in app state.
 export const computeHabitWeeklyStats = ({ habits, prefs, nowDate }) => {
