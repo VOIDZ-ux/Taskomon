@@ -48,8 +48,8 @@
   },
   "row": {
     "dragToReorder": "ドラッグして並び替え",
-    "doneTitle": "深夜にカレンダーへアーカイブされます",
-    "donePill": "完了 · 深夜にアーカイブ",
+    "doneTitle": "デイリーリセット時にカレンダーへアーカイブされます",
+    "donePill": "完了 · リセット時にアーカイブ",
     "moveToPantryTitle": "パントリーに戻す",
     "gracePill": "↩ パントリー · {{time}}",
     "missedDays": "未達成 {{count}}日",

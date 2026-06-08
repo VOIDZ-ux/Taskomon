@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { dateKey, startOfWeekDate } from "../utils/dateHelpers.js";
-import { computeHabitWeeklyStats } from "../utils/completionHelpers.js";
+import { computeHabitProgressStats } from "../utils/completionHelpers.js";
 import {
   IconGear, IconUser, IconSort, IconRepeat, IconCheckCircle, IconArchive,
 } from "./Icons.jsx";
@@ -269,7 +269,7 @@ export default function MainScreen({
     let earned = 0, total = 0;
 
     if (range === "This Week") {
-      const { numer: hN, denom: hD } = computeHabitWeeklyStats({ habits, prefs, nowDate });
+      const { numer: hN, denom: hD } = computeHabitProgressStats({ habits, prefs, nowDate });
       const totalNumer = weekStats.numer + hN;
       const totalDenom = weekStats.denom + hD;
       return totalDenom > 0 ? Math.round((totalNumer / totalDenom) * 100) : 0;

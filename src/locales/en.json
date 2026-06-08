@@ -48,8 +48,8 @@
   },
   "row": {
     "dragToReorder": "Drag to reorder",
-    "doneTitle": "Will be filed in Calendar at midnight",
-    "donePill": "done · files at midnight",
+    "doneTitle": "Will be filed in Calendar at day rollover",
+    "donePill": "done · files at day rollover",
     "moveToPantryTitle": "Move back to Pantry",
     "gracePill": "↩ pantry · {{time}}",
     "missedDays": "missed {{count}}d",

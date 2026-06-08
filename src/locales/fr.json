@@ -48,8 +48,8 @@
   },
   "row": {
     "dragToReorder": "Glisser pour réordonner",
-    "doneTitle": "Sera archivé dans le Calendrier à minuit",
-    "donePill": "fait · archivé à minuit",
+    "doneTitle": "Sera archivé dans le Calendrier au reset du jour",
+    "donePill": "fait · archivé au reset",
     "moveToPantryTitle": "Remettre dans la réserve",
     "gracePill": "↩ réserve · {{time}}",
     "missedDays": "manquée {{count}}j",

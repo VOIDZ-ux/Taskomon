@@ -48,8 +48,8 @@
   },
   "row": {
     "dragToReorder": "Ziehen zum Sortieren",
-    "doneTitle": "Wird um Mitternacht im Kalender archiviert",
-    "donePill": "erledigt · archiviert um Mitternacht",
+    "doneTitle": "Wird beim Tageswechsel im Kalender archiviert",
+    "donePill": "erledigt · archiviert beim Reset",
     "moveToPantryTitle": "Zurück in den Vorrat",
     "gracePill": "↩ Vorrat · {{time}}",
     "missedDays": "verpasst {{count}}T",

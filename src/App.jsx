@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { sameColor } from "./utils/colorHelpers.js";
 import { startOfWeekDate, dateKey } from "./utils/dateHelpers.js";
-import { computeHabitWeeklyStats } from "./utils/completionHelpers.js";
+import { computeHabitWeeklyStats, computeHabitProgressStats } from "./utils/completionHelpers.js";
 import useAppState from "./hooks/useAppState.js";
 import usePetHealth from "./hooks/usePetHealth.js";
 import MainScreen from "./components/MainScreen.jsx";
@@ -170,7 +170,7 @@ export default function App() {
       currentWeekStart.setHours(prefs.resetHour, 0, 0, 0);
       if (currentWeekStart.getTime() < firstFullWeekStartMs) return 0;
     }
-    const { numer: hN, denom: hD } = computeHabitWeeklyStats({ habits, prefs, nowDate });
+    const { numer: hN, denom: hD } = computeHabitProgressStats({ habits, prefs, nowDate });
     const totalNumer = weekStats.numer + hN;
     const totalDenom = weekStats.denom + hD;
     if (totalDenom === 0) return 0;

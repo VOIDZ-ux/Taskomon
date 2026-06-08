@@ -48,8 +48,8 @@
   },
   "row": {
     "dragToReorder": "拖动排序",
-    "doneTitle": "将于午夜归档到日历",
-    "donePill": "完成 · 午夜归档",
+    "doneTitle": "将于每日重置时归档到日历",
+    "donePill": "完成 · 重置时归档",
     "moveToPantryTitle": "移回储藏室",
     "gracePill": "↩ 储藏室 · {{time}}",
     "missedDays": "未完成 {{count}}天",

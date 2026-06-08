@@ -22,8 +22,32 @@ const isHabitExpectedOnDay = (habit, dayDate, weekStart) => {
   return dayIdx < effectiveGoal;
 };
 
-// Compute current week's habit contribution to numerator and denominator only.
-// Task contribution is tracked separately via explicit weekStats in app state.
+// Full-week denominator: counts all expected slots for the entire 7-day week,
+// but only credits completions up to today. Used for display and crack progress
+// so Monday doesn't inflate the percentage just because few days have elapsed.
+export const computeHabitProgressStats = ({ habits, prefs, nowDate }) => {
+  const weekStart = startOfWeekDate(nowDate, prefs.weekStart);
+  const jsDay = nowDate.getDay();
+  const todayIdx = prefs.weekStart === "MON" ? (jsDay + 6) % 7 : jsDay;
+
+  let numer = 0, denom = 0;
+  for (let i = 0; i < 7; i++) {
+    const dayDate = new Date(weekStart);
+    dayDate.setDate(dayDate.getDate() + i);
+    const dayK = dateKey(dayDate);
+    for (const h of habits) {
+      if (isHabitExpectedOnDay(h, dayDate, prefs.weekStart)) {
+        denom++;
+        if (i <= todayIdx && h.completions?.[dayK]) numer++;
+      }
+    }
+  }
+
+  return { numer, denom };
+};
+
+// Elapsed-days denominator: only counts days from week start up to today.
+// Used for rollover evaluation (called at end of week = all days elapsed anyway).
 export const computeHabitWeeklyStats = ({ habits, prefs, nowDate }) => {
   const weekStart = startOfWeekDate(nowDate, prefs.weekStart);
   const jsDay = nowDate.getDay();

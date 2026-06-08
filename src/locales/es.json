@@ -48,8 +48,8 @@
   },
   "row": {
     "dragToReorder": "Arrastra para reordenar",
-    "doneTitle": "Se archivará en el Calendario a medianoche",
-    "donePill": "hecho · archiva a medianoche",
+    "doneTitle": "Se archivará en el Calendario al reinicio del día",
+    "donePill": "hecho · archiva al reinicio",
     "moveToPantryTitle": "Mover a la despensa",
     "gracePill": "↩ despensa · {{time}}",
     "missedDays": "perdida {{count}}d",
